@@ -106,7 +106,18 @@
 
       <p>🎉 July Winner: Congratulations to Tay***!!</p>
 
-      <footer>© 2048 Global</footer>
+      <footer>
+<script type="text/javascript">
+	atOptions = {
+		'key' : 'ec629106d819ccf2bda1ce97153afebe',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/ec629106d819ccf2bda1ce97153afebe/invoke.js"></script>
+© 2048 Global</footer>
     </div>
   </div>
 </body>
