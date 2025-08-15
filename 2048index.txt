@@ -183,10 +183,6 @@
   </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NCMMF9VJ"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
   <div id="app" role="application" aria-label="2048 Game">
     <!-- ===== Top notice (plain text + blue link) ===== -->
     <div class="top-block" aria-label="How to use">
@@ -262,8 +258,8 @@ function shareSite() {
 
     <!-- ===== Blue link under the game ===== -->
     <p class="below-cta">
-      <a href="/exchange/index.html" target="_blank" rel="noopener">
-        Still using a domestic exchange?
+      <a href="https://partner.bitget.com/bg/J6RM1E" target="_blank" rel="noopener">
+        Get Rich with Leverage Coin Trading.
       </a>
     </p>
 
