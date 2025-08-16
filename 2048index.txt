@@ -199,7 +199,7 @@
       <p class="top-main" style="color: #000; font-family: 'Montserrat', sans-serif;">
   Make 2048. Use arrow keys or swipe! 
   <a href="/sol/index.html" target="_blank" rel="noopener" style="color: #800020; text-decoration: none;">
-    $2048 on SOLANA
+    $2048 Tokenomics
   </a>
       </p><B>Think your friends can beat it? Share it!
         <button onclick="shareSite()" style="background:none;border:none;cursor:pointer;padding:0;">
