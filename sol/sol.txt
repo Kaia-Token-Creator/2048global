@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-20YHHF4D48"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-20YHHF4D48');
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>2048 Global on Solana</title>
@@ -42,7 +51,7 @@
     .container {
       max-width: 800px;
       margin: 0 auto;
-      padding: 50px 20px;
+      padding: 10px 20px;
     }
     h1 {
       font-size: 2.5rem;
@@ -89,9 +98,9 @@
   <div class="container">
     <h1>2048 Global on Solana</h1>
     <p>CA: Coming Soon</p><br>
-<B>Tokenomics : 70% of the ad revenue generated from<br> <a href="https://2048glob.com" target="_blank">2048global.com</a><br> will be used to buy back & burn $2048.<br>
+<B>Tokenomics : 70% of the ad revenue generated from<br> <a href="https://2048global.com" target="_blank" style="color: #fff;">2048global.com</a><br> will be used to buy back & burn $2048.<br>
 So, Holders!<br>
-Invite your friends and Spread this game across the globe!!!
+Invite your friends and Spread this game across the globe!!!<br>
 
     <div class="links">
       <a href="https://x.com/taoali89" target="_blank">X</a>
