@@ -197,10 +197,9 @@
     <!-- ===== Top notice (plain text + blue link) ===== -->
     <div class="top-block" aria-label="How to use">
       <p class="top-main">
-        Make 2048. Use arrow keys or swipe! <p class="top-link">
-        <a href="/vpn/index.html" target="_blank" rel="noopener">
-          $2048 on Solana
-        </a>
+<a href="/sol/index.html" target="_blank" rel="noopener">
+        Make 2048. Use arrow keys or swipe! $2048 on Solana
+   </a>
       </p><br>Think your friends can beat it? Share it!
         <button onclick="shareSite()" style="background:none;border:none;cursor:pointer;padding:0;">
           <img src="https://cdn-icons-png.flaticon.com/512/929/929610.png"
