@@ -97,7 +97,7 @@
 <body>
   <div class="container">
     <h1>2048 Global on Solana</h1>
-    <p>CA: Coming soon</p>
+    <p>CA: 7pCE3wwzGtnEo5s6hiTAz1ti5yzjFNHgCEgN5CBAbBLV</p>
 <B>Tokenomics :<br>
 70% of the ad revenue generated from<br> <a href="https://2048global.com" target="_blank" style="color: #fff;">2048global.com</a><br> will be used to buy back & burn $2048.<br>
 So, Holders!<br>
