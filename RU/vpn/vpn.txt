@@ -1,0 +1,140 @@
+<!DOCTYPE html> 
+<html lang="ru">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9891583086388017"
+     crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F00NF909N7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F00NF909N7');
+</script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VPN — Открой мир</title>
+  <meta name="description" content="Освободись от границ. Смотри, путешествуй и исследуй без ограничений — с NordVPN." />
+
+  <!-- Google Fonts: Jua -->
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#fafafa; --text:#1f2937; --muted:#6b7280; --brand:#0ea5e9; --brand-dark:#0284c7; --card:#ffffff; --accent:#fde68a; --ok:#16a34a;
+    }
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:'Jua', sans-serif;
+      line-height:1.65
+    }
+    .container{max-width:860px;margin:0 auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:8px 0 18px}
+    h1{margin:0;font-size:clamp(22px,5.4vw,32px)}
+    .cta{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;padding:10px 16px;border-radius:12px;font-weight:700}
+    .cta:hover{background:var(--brand-dark)}
+    .card{background:var(--card);border-radius:14px;padding:18px 18px;box-shadow:0 2px 10px rgba(0,0,0,.05);margin:14px 0}
+    .lead{background:var(--accent);padding:10px 12px;border-radius:10px;margin:10px 0;font-weight:700}
+    h2{margin:10px 0 8px;font-size:clamp(18px,4.4vw,24px)}
+    p{margin:8px 0}
+    ul{margin:8px 0 8px 20px}
+    .note{color:var(--muted);font-size:.95em}
+    .grid{display:grid;grid-template-columns:1fr;gap:12px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width:700px){.grid-2{grid-template-columns:1fr}}
+    .ok{color:var(--ok);font-weight:700}
+    .hr{height:1px;background:#e5e7eb;margin:18px 0}
+    .btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+    a.inline{color:var(--brand);text-decoration:none}
+    a.inline:hover{text-decoration:underline}
+    .footer-cta{margin:18px 0 6px;text-align:center}
+  </style>
+</head>
+<body>
+<script type="text/javascript">
+	atOptions = {
+		'key' : 'ec629106d819ccf2bda1ce97153afebe',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/ec629106d819ccf2bda1ce97153afebe/invoke.js"></script>
+  <div class="container">
+    <header>
+      <h1>Открой мир</h1>
+      <a class="cta" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">Получить доступ</a>
+    </header>
+
+    <div class="card">
+      <p>Представь, что весь интернет — каждый фильм, каждый сайт, каждое впечатление — у тебя под рукой.</p>
+      <p>С NordVPN ты можешь освободиться от цифровых границ и исследовать мир без ограничений.</p>
+
+      <div class="lead">Миллионы людей уже смотрят, покупают и общаются безопасно из любой точки. Не оставайся в стороне.</div>
+
+      <h2>Зачем ограничивать себя?</h2>
+      <p>
+        <a class="inline" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">NordVPN</a> позволяет получить доступ к любому сервису или сайту, заблокированному в твоей стране — мгновенно и безопасно.
+      </p>
+      <p>Смотри новые сериалы, заходи на эксклюзивные сайты и используй интернет без барьеров.</p>
+
+      <div class="card grid-2">
+        <div>
+          <h2>Пример ① Открой Netflix по всему миру</h2>
+          <p>Смотри контент, доступный только за рубежом — от полного «Детектива Конана» в Японии до фильмов о Гарри Поттере в Великобритании — всё в один клик.</p>
+        </div>
+        <div>
+          <h2>Пример ② Открой свой мир</h2>
+          <p>Получай доступ к библиотекам контента из десятков стран. Даже подключайся к… Португалии, если захочешь. Выбор за тобой!</p>
+        </div>
+      </div>
+
+      <h2>Туда, куда другие не могут</h2>
+      <p>Подключайся к странам с ограничениями, например к Китаю, и пользуйся интернетом как местный житель.</p>
+
+      <div class="hr"></div>
+
+      <h2>Почему NordVPN?</h2>
+      <p>Молниеносная скорость, мощная защита и встроенная блокировка рекламы — всё в одном простом приложении.</p>
+
+      <div class="card">
+        <h2>Специальное предложение — ограниченное время</h2>
+        <p>
+          Подключайся сегодня и получи до <a class="inline" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">70% СКИДКИ</a>.  
+          Это всего лишь <a class="inline" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">$3/месяц</a>, чтобы открыть весь интернет.
+        </p>
+
+        <div class="btn-row">
+          <a class="cta" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">Забрать скидку</a>
+          <a class="inline" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">Смотреть акцию</a>
+        </div>
+
+        <p class="note">Защищай до 10 устройств по цене чашки кофе. Пробуй без риска с нашей 30-дневной гарантией возврата денег.</p>
+      </div>
+
+      <p>Не соглашайся на меньший интернет. Возьми контроль и смотри всё.</p>
+      <p class="ok">Жми ниже и начни своё глобальное путешествие сегодня.</p>
+
+      <div class="footer-cta">
+        <a class="cta" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">Открыть с NordVPN</a>
+      </div>
+    </div>
+  </div>
+<script type="text/javascript">
+	atOptions = {
+		'key' : 'ec629106d819ccf2bda1ce97153afebe',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/ec629106d819ccf2bda1ce97153afebe/invoke.js"></script>
+
+</body>
+</html>
