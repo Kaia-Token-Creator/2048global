@@ -125,7 +125,7 @@
         </li>
       </ol>
 
-      <p>🎉 August Winner is ??!!!</p>
+      <p>🎉 Who is the Winner this month ??!!! The winner will be informed via email.</p>
 
       <footer>
 <script type="text/javascript">
