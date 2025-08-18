@@ -1,0 +1,556 @@
+<!DOCTYPE html> 
+<html lang="th">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9891583086388017"
+     crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F00NF909N7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F00NF909N7');
+</script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>2048 โกลบอล — เกมเวอร์ชันเว็บ</title>
+  <meta name="description" content="คุณเอาชนะได้ไหม? 2048 โกลบอล เกมเวอร์ชันเว็บ — รวมตัวเลขให้ได้ 2048 แล้วพิสูจน์ฝีมือของคุณ!">
+
+  <!-- Thai font for better rendering -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;700;800&display=swap" rel="stylesheet">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="เกม 2048 โกลบอล">
+  <meta property="og:title" content="2048 โกลบอล! คุณเอาชนะได้ไหม?">
+  <meta property="og:description" content="รวมให้ได้ 2048 ใช้ปุ่มลูกศรหรือปัดหน้าจอ — 2048 โกลบอล เกมเวอร์ชันเว็บ">
+  <meta property="og:url" content="https://www.2048global.com">
+  <meta property="og:image" content="https://2048global.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- X(Twitter) Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="2048 โกลบอล! คุณเอาชนะได้ไหม?">
+  <meta name="twitter:description" content="รวมตัวเลขให้ได้ 2048 — เล่นบนเว็บได้ทันที">
+  <meta name="twitter:image" content="2048global.com/og-image.jpg">
+
+  <!-- Favicon / App Icon -->
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#faf8ef">
+
+  <style>
+    :root {
+      --bg: #faf8ef;
+      --board: #bbada0;
+      --tile-empty: #cdc1b4;
+      --text: #2b2b2b;
+      --accent: #8f7a66;
+      --tile-2: #eee4da; --tile-4: #ede0c8; --tile-8: #f2b179; --tile-16: #f59563; --tile-32: #f67c5f; --tile-64: #f65e3b;
+      --tile-128: #edcf72; --tile-256: #edcc61; --tile-512: #edc850; --tile-1024: #edc53f; --tile-2048: #edc22e;
+      --blue: #2563eb;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Noto Sans Thai', system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    /* Prevent page scroll while interacting */
+    body, #app, .game-wrap, .board {
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+      touch-action: none;
+    }
+
+    #app { max-width: 520px; margin: 0 auto; padding: 16px; }
+
+    /* ===== Top/Bottom notices ===== */
+    .top-block { margin: 8px 0 14px; line-height: 1.5; }
+    .top-main {
+      margin: 0 0 6px;
+      font-weight: 700;
+      color: #000;
+      font-size: clamp(13px, 3.2vw, 14px); /* auto-shrink for Thai */
+      letter-spacing: 0.1px;
+    }
+    .top-link { margin: 0; font-size: clamp(13px, 3.2vw, 14px); }
+    .top-link a { color: var(--blue); text-decoration: none; }
+    .top-link a:hover { text-decoration: underline; }
+
+    .below-cta { margin: 18px 0 6px; text-align: left; font-size: clamp(13px, 3.2vw, 14px); }
+    .below-cta a { color: var(--blue); text-decoration: none; font-weight: 600; }
+    .below-cta a:hover { text-decoration: underline; }
+
+    header { display:flex; justify-content: space-between; align-items: center; gap: 12px; }
+    h1 { font-size: clamp(20px, 6vw, 36px); margin: 0; letter-spacing: 0.5px; }
+    .badges { display:flex; gap: 8px; }
+    .badge { background: #bbada0; color: #fff; padding: 8px 12px; border-radius: 10px; text-align:center; min-width: 84px; }
+    .badge .label { font-size: clamp(11px, 2.8vw, 12px); opacity: .9; } /* shrink labels */
+    .badge .val { font-size: clamp(16px, 4.8vw, 18px); font-weight: 700; } /* shrink numbers slightly */
+
+    .btns { display:flex; gap: 8px; margin-top: 8px; }
+    button {
+      appearance:none; border: none; border-radius: 10px; padding: 10px 12px;
+      background: #8f7a66; color:#fff; font-weight:700; cursor:pointer;
+      font-size: clamp(12px, 3.4vw, 14px); /* auto-shrink for longer Thai words */
+    }
+    button:active { transform: translateY(1px); }
+
+    .game-wrap { margin-top: 14px; }
+
+    /* Square responsive board */
+    .board {
+      background: var(--board);
+      border-radius: 14px;
+      position: relative;
+      aspect-ratio: 1 / 1;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      gap: clamp(6px, 1.4vw, 12px);
+      padding: clamp(6px, 1.4vw, 12px);
+      user-select: none;
+      -webkit-user-select: none;
+      overflow: hidden;
+    }
+
+    .cell { background: var(--tile-empty); border-radius: 10px; width: 100%; height: 100%; }
+
+    .tile { position: absolute; inset: 0; margin: 0; }
+    .tile > div {
+      position: absolute;
+      border-radius: 10px;
+      display:flex; align-items:center; justify-content:center;
+      font-weight: 800;
+      font-size: clamp(18px, 5.2vw, 34px);
+      color: #776e65;
+      transition: transform 80ms ease-in, background-color 80ms linear, color 80ms linear;
+    }
+
+    .n-2, .n-4 { color: #776e65; }
+    .n-8, .n-16, .n-32, .n-64, .n-128, .n-256, .n-512, .n-1024, .n-2048 { color: #f9f6f2; }
+
+    .n-2 { background: var(--tile-2); }
+    .n-4 { background: var(--tile-4); }
+    .n-8 { background: var(--tile-8); }
+    .n-16 { background: var(--tile-16); }
+    .n-32 { background: var(--tile-32); }
+    .n-64 { background: var(--tile-64); }
+    .n-128 { background: var(--tile-128); }
+    .n-256 { background: var(--tile-256); }
+    .n-512 { background: var(--tile-512); }
+    .n-1024 { background: var(--tile-1024); font-size: clamp(16px, 4.6vw, 30px); }
+    .n-2048 { background: var(--tile-2048); font-size: clamp(14px, 4.2vw, 26px); }
+
+    .overlay {
+      position: absolute; inset: 0; display:none; align-items:center; justify-content:center;
+      background: rgba(238, 228, 218, 0.73);
+      border-radius: 14px; text-align:center; padding: 24px;
+    }
+    .overlay.show { display:flex; }
+    .overlay h2 { margin: 0 0 8px; font-size: clamp(18px, 5.4vw, 28px); }
+    .overlay p { margin: 0 0 14px; }
+
+    .sr-only { position:absolute; left:-9999px; }
+
+    /* === Tablet-specific tweaks === */
+    @media (min-width: 600px) and (max-width: 1024px) {
+      body, #app { touch-action: auto; overscroll-behavior: auto; }
+      #app { max-width: 420px; padding: 12px; }
+      .board { gap: 10px; padding: 10px; }
+      .top-main { font-size: clamp(15px, 3.2vw, 18px); }
+    }
+
+    /* === Low-height tablet (landscape) === */
+    @media (max-height: 720px) and (orientation: landscape) {
+      #app { max-width: 380px; }
+      .board { gap: 8px; padding: 8px; }
+    }
+  </style>
+</head>
+<body>
+<!-- เฮดเดอร์เนวิเกชัน (บางและขนาดเล็ก) -->
+<header style="width:100%;background:#1f2937;color:#fff;
+               padding:4px 10px;
+               display:flex;justify-content:space-between;align-items:center;
+               position:sticky;top:0;z-index:999;font-size:13px;line-height:1;">
+  <!-- โลโก้/ไตเติล -->
+  <div style="font-weight:bold;">
+    2048 โกลบอล เกมบนเว็บ
+  </div>
+
+  <!-- ตัวเลือกภาษา -->
+  <nav>
+    <select aria-label="Language" onchange="goLang(this.value)"
+            style="padding:2px 6px;font-size:12px;border-radius:4px;border:none;">
+      <option value="" selected disabled>🌐 ภาษา</option>
+      <option value="https://www.2048global.com">Englinsh</option>
+      <option value="/CN/index.html">中文</option>
+      <option value="/ES/index.html">Español</option>
+      <option value="/JA/index.html">日本語</option>
+      <option value="/FR/index.html">Français</option>
+      <option value="/IT/index.html">Italiano</option>
+      <option value="/NL/index.html">Nederlands</option>
+      <option value="/PT/index.html">Português</option>
+      <option value="/HI/index.html">हिन्दी</option>
+      <option value="/AR/index.html">العربية</option>
+      <option value="/BN/index.html">বাংলা</option>
+      <option value="/RU/index.html">Русский</option>
+      <option value="/ID/index.html">Bahasa Indonesia</option>
+      <option value="/VI/index.html">Tiếng Việt</option>
+      <option value="/TH/index.html">ไทย</option>
+      <option value="/MYA/index.html">မြန်မာ</option>
+    </select>
+  </nav>
+</header>
+
+<script>
+function goLang(url) {
+  if (!url) return;
+  window.location.href = url;
+}
+</script>
+
+<script type="text/javascript" src="//www.highperformanceformat.com/ec629106d819ccf2bda1ce97153afebe/invoke.js"></script>
+
+  <div id="app" role="application" aria-label="เกม 2048">
+    <!-- ===== คำแนะนำด้านบน ===== -->
+    <div class="top-block" aria-label="วิธีเล่น">
+      <p class="top-main" style="color: #000;">
+        รวมให้ได้ 2048 ใช้ปุ่มลูกศรหรือปัดหน้าจอ!
+        <a href="/sol/index.html" target="_blank" rel="noopener" style="color: #800020; text-decoration: none;">
+          $2048 Tokenomics
+        </a>
+      </p>
+      <b>คิดว่าเพื่อนคุณจะชนะได้ไหม? แชร์เลย!
+        <button onclick="shareSite()" style="background:none;border:none;cursor:pointer;padding:0;">
+          <img src="https://cdn-icons-png.flaticon.com/512/929/929610.png"
+               alt="แชร์" width="16" height="16">
+        </button>
+
+<script>
+function shareSite() {
+  const shareData = {
+    title: '2048 Global',
+    text: 'Can anyone beat this?',
+    url: 'https://www.2048global.com'
+  };
+
+  if (navigator.share) {
+    navigator.share(shareData).catch(err => console.log(err));
+  } else {
+    navigator.clipboard.writeText(shareData.url)
+      .then(() => {
+        alert("คัดลอกลิงก์แล้ว");
+      })
+      .catch(err => {
+        console.error("คัดลอกลิงก์ไม่สำเร็จ:", err);
+      });
+  }
+}
+</script>
+      </b>
+      <p class="top-link">
+        <a href="/TH/vpn/index.html" target="_blank" rel="noopener">
+          อยากสำรวจโลกแบบไม่ระบุตัวตนไหม?
+        </a>
+      </p>
+    </div>
+
+    <header>
+      <h1>2048</h1>
+      <div class="badges" aria-hidden="true">
+        <div class="badge" id="scoreBox"><div class="label">คะแนน</div><div class="val" id="score">0</div></div>
+        <div class="badge" id="bestBox"><div class="label">สูงสุด</div><div class="val" id="best">0</div></div>
+      </div>
+    </header>
+
+    <div class="btns">
+      <button id="newGame" aria-label="เริ่มใหม่">เริ่มใหม่</button>
+      <button id="undoBtn" aria-label="ย้อนกลับ">ย้อนกลับ</button>
+    </div>
+
+    <!-- ===== พื้นที่เกม ===== -->
+    <div class="game-wrap">
+      <div class="board" id="board" tabindex="0" aria-label="กระดานเกม 4x4" aria-live="polite"></div>
+      <div class="overlay" id="overlay" role="dialog" aria-modal="true">
+        <div>
+          <h2 id="ovTitle">จบเกม</h2>
+          <p id="ovMsg">ลองอีกครั้งไหม?</p>
+          <button id="retry">เริ่มใหม่</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- กิจกรรม 1,000$ -->
+    <div class="event-box">
+      <strong>
+        <a href="/TH/viral/index.html" target="_blank" style="text-decoration:none; color:inherit;" rel="noopener">
+          <br> แชร์เกมนี้แล้วลุ้นรับ <span class="highlight">1,000$</span> ทุกเดือน?!
+        </a>
+      </strong>
+    </div>
+
+    <!-- ลิงก์สีน้ำเงินใต้เกม -->
+    <p class="below-cta">
+      <a href="https://partner.bitget.com/bg/J6RM1E" target="_blank" rel="noopener">
+        ทำกำไรด้วยการเทรดคริปโตแบบ Leverage
+      </a>
+    </p>
+
+    <p class="sr-only" id="status" aria-live="assertive"></p>
+  </div>
+
+<script type="text/javascript">
+  atOptions = {
+    'key' : 'ec629106d819ccf2bda1ce97153afebe',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/ec629106d819ccf2bda1ce97153afebe/invoke.js"></script>
+
+  <!-- ===== Game script (logic unchanged; only UI texts localized) ===== -->
+  <script>
+  (function(){
+    const SIZE = 4;
+    const boardEl = document.getElementById('board');
+    const scoreEl = document.getElementById('score');
+    const bestEl = document.getElementById('best');
+    const overlay = document.getElementById('overlay');
+    const ovTitle = document.getElementById('ovTitle');
+    const ovMsg = document.getElementById('ovMsg');
+    const statusEl = document.getElementById('status');
+    const newGameBtn = document.getElementById('newGame');
+    const retryBtn = document.getElementById('retry');
+    const undoBtn = document.getElementById('undoBtn');
+
+    const stopScroll = (e) => { e.preventDefault(); };
+    ['touchstart','touchmove','wheel'].forEach(evt => {
+      boardEl.addEventListener(evt, stopScroll, { passive: false });
+    });
+
+    const cellPositions = [];
+    const gap = () => parseFloat(getComputedStyle(boardEl).gap) || 8;
+    const pad = () => parseFloat(getComputedStyle(boardEl).padding) || 8;
+
+    function buildCells(){
+      boardEl.innerHTML = '';
+      const frag = document.createDocumentFragment();
+      for (let r=0;r<SIZE;r++){
+        for (let c=0;c<SIZE;c++){
+          const cell = document.createElement('div');
+          cell.className = 'cell';
+          frag.appendChild(cell);
+        }
+      }
+      boardEl.appendChild(frag);
+    }
+
+    let grid, score, best, history = [];
+
+    function emptyGrid(){
+      return Array.from({length: SIZE}, () => Array(SIZE).fill(0));
+    }
+
+    function start(newSeed=true){
+      grid = emptyGrid();
+      score = 0;
+      updateScore(0);
+      if (newSeed){
+        addRandomTile(); addRandomTile();
+      }
+      history = [];
+      render();
+      hideOverlay();
+      focusBoard();
+    }
+
+    function focusBoard(){ boardEl.focus({preventScroll:true}); }
+
+    function updateScore(plus){
+      score += plus;
+      scoreEl.textContent = score;
+      best = Math.max(Number(localStorage.getItem('best2048')||'0'), score);
+      localStorage.setItem('best2048', best);
+      bestEl.textContent = best;
+    }
+
+    function randomEmptyCell(){
+      const empties = [];
+      for (let r=0;r<SIZE;r++) for (let c=0;c<SIZE;c++) if (grid[r][c]===0) empties.push([r,c]);
+      if (!empties.length) return null;
+      return empties[Math.floor(Math.random()*empties.length)];
+    }
+
+    function addRandomTile(){
+      const spot = randomEmptyCell();
+      if (!spot) return false;
+      const [r,c] = spot;
+      grid[r][c] = Math.random() < 0.9 ? 2 : 4;
+      return true;
+    }
+
+    function cloneGrid(g){ return g.map(row => row.slice()); }
+
+    function canMove(){
+      for (let r=0;r<SIZE;r++) for (let c=0;c<SIZE;c++) if (grid[r][c]===0) return true;
+      for (let r=0;r<SIZE;r++) for (let c=0;c<SIZE;c++){
+        const v = grid[r][c];
+        if (r+1<SIZE && grid[r+1][c]===v) return true;
+        if (c+1<SIZE && grid[r][c+1]===v) return true;
+      }
+      return false;
+    }
+
+    function move(dir){
+      const before = cloneGrid(grid);
+      let moved = false; let gained = 0;
+
+      function processLine(get, set){
+        const vals = [];
+        for (let i=0;i<SIZE;i++) vals.push(get(i));
+        const filtered = vals.filter(v => v!==0);
+        const merged = [];
+        for (let i=0;i<filtered.length;i++){
+          if (filtered[i+1] === filtered[i]){
+            const nv = filtered[i]*2; gained += nv; merged.push(nv); i++;
+          } else {
+            merged.push(filtered[i]);
+          }
+        }
+        while (merged.length < SIZE) merged.push(0);
+        for (let i=0;i<SIZE;i++) set(i, merged[i]);
+      }
+
+      if (dir==='left'){
+        for (let r=0;r<SIZE;r++){
+          processLine(i => grid[r][i], (i,v)=> grid[r][i]=v);
+        }
+      } else if (dir==='right'){
+        for (let r=0;r<SIZE;r++){
+          processLine(i => grid[r][SIZE-1-i], (i,v)=> grid[r][SIZE-1-i]=v);
+        }
+      } else if (dir==='up'){
+        for (let c=0;c<SIZE;c++){
+          processLine(i => grid[i][c], (i,v)=> grid[i][c]=v);
+        }
+      } else if (dir==='down'){
+        for (let c=0;c<SIZE;c++){
+          processLine(i => grid[SIZE-1-i][c], (i,v)=> grid[SIZE-1-i][c]=v);
+        }
+      }
+
+      moved = JSON.stringify(before)!==JSON.stringify(grid);
+      if (moved){
+        history.push({ grid: before, score });
+        if (history.length>50) history.shift();
+        updateScore(gained);
+        addRandomTile();
+        render();
+        if (!canMove()) showOverlay('จบเกม', 'ไม่มีการเดินหมากที่ทำได้อีกแล้ว');
+      }
+      announce(dir, moved, gained);
+    }
+
+    function undo(){
+      const last = history.pop();
+      if (!last) return;
+      grid = cloneGrid(last.grid);
+      score = last.score;
+      scoreEl.textContent = score;
+      render();
+    }
+
+    function announce(dir, moved, gained){
+      const names = {left:'ซ้าย', right:'ขวา', up:'ขึ้น', down:'ลง'};
+      statusEl.textContent = moved ? `${names[dir]} +${gained} คะแนน` : `ไม่มีการขยับ`;
+    }
+
+    function hideOverlay(){ overlay.classList.remove('show'); }
+    function showOverlay(title,msg){ ovTitle.textContent=title; ovMsg.textContent=msg; overlay.classList.add('show'); }
+
+    function render(){
+      if (!boardEl.querySelector('.cell')) buildCells();
+      const old = boardEl.querySelector('.tile'); if (old) old.remove();
+      const layer = document.createElement('div'); layer.className = 'tile';
+
+      const g = getComputedStyle(boardEl);
+      const G = parseFloat(g.gap);
+      const P = parseFloat(g.padding);
+      const cols = SIZE; const rows = SIZE;
+      const rect = boardEl.getBoundingClientRect();
+      const innerW = rect.width - P*2 - G*(cols-1);
+      const innerH = rect.height - P*2 - G*(rows-1);
+      const cw = innerW / cols; const ch = innerH / rows;
+
+      for (let r=0;r<SIZE;r++) for (let c=0;c<SIZE;c++){
+        const v = grid[r][c]; if (!v) continue;
+        const tile = document.createElement('div');
+        tile.textContent = v;
+        tile.className = `n-${v}`;
+        tile.style.width = cw + 'px';
+        tile.style.height = ch + 'px';
+        tile.style.transform = `translate(${P + c*(cw+G)}px, ${P + r*(ch+G)}px)`;
+        layer.appendChild(tile);
+      }
+      boardEl.appendChild(layer);
+    }
+
+    const keyMap = {
+      'ArrowLeft':'left','a':'left','A':'left',
+      'ArrowRight':'right','d':'right','D':'right',
+      'ArrowUp':'up','w':'up','W':'up',
+      'ArrowDown':'down','s':'down','S':'down'
+    };
+    window.addEventListener('keydown', (e)=>{
+      const dir = keyMap[e.key];
+      if (dir){ e.preventDefault(); move(dir); }
+    }, { passive:false });
+
+    let touchStartX=0, touchStartY=0, touching=false;
+    const SWIPE_MIN = 18;
+    boardEl.addEventListener('touchstart', (e)=>{
+      if (!e.touches || !e.touches[0]) return;
+      touching = true;
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }, { passive:false });
+    boardEl.addEventListener('touchmove', (e)=>{ if (touching) e.preventDefault(); }, { passive:false });
+    boardEl.addEventListener('touchend', (e)=>{
+      if (!touching) return; touching=false;
+      const t = e.changedTouches[0];
+      const dx = t.clientX - touchStartX; const dy = t.clientY - touchStartY;
+      if (Math.max(Math.abs(dx), Math.abs(dy)) < SWIPE_MIN) return;
+      if (Math.abs(dx) > Math.abs(dy)) move(dx>0?'right':'left'); else move(dy>0?'down':'up');
+    }, { passive:false });
+
+    newGameBtn.addEventListener('click', () => window.location.reload());
+    retryBtn.addEventListener('click', ()=> start(true));
+    undoBtn.addEventListener('click', ()=> undo());
+
+    window.addEventListener('resize', ()=> render());
+
+    bestEl.textContent = Number(localStorage.getItem('best2048')||'0');
+    start(true);
+  })();
+  </script>
+
+<script type="text/javascript">
+  atOptions = {
+    'key' : 'ec629106d819ccf2bda1ce97153afebe',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/ec629106d819ccf2bda1ce97153afebe/invoke.js"></script>
+
+</body>
+</html>
