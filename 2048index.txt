@@ -201,7 +201,7 @@
                position:sticky;top:0;z-index:999;font-size:13px;line-height:1;">
   <!-- 로고/타이틀 -->
   <div style="font-weight:bold;">
-    2048 Global
+    2048 web game
   </div>
 
   <!-- 언어 선택 드롭다운 -->
