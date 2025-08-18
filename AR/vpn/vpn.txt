@@ -1,0 +1,139 @@
+<!DOCTYPE html> 
+<html lang="ar" dir="rtl">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9891583086388017"
+     crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F00NF909N7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F00NF909N7');
+</script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VPN — افتح العالم</title>
+  <meta name="description" content="تحرر من الحدود. شاهد، تصفح، واستكشف بلا قيود — مع NordVPN." />
+
+  <!-- Google Fonts Arabic -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#fafafa; --text:#1f2937; --muted:#6b7280; --brand:#0ea5e9; --brand-dark:#0284c7; --card:#ffffff; --accent:#fde68a; --ok:#16a34a;
+    }
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:'Tajawal', sans-serif;
+      line-height:1.65
+    }
+    .container{max-width:860px;margin:0 auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:8px 0 18px}
+    h1{margin:0;font-size:clamp(22px,5.4vw,32px)}
+    .cta{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;padding:10px 16px;border-radius:12px;font-weight:700}
+    .cta:hover{background:var(--brand-dark)}
+    .card{background:var(--card);border-radius:14px;padding:18px 18px;box-shadow:0 2px 10px rgba(0,0,0,.05);margin:14px 0}
+    .lead{background:var(--accent);padding:10px 12px;border-radius:10px;margin:10px 0;font-weight:700}
+    h2{margin:10px 0 8px;font-size:clamp(18px,4.4vw,24px)}
+    p{margin:8px 0}
+    ul{margin:8px 0 8px 20px}
+    .note{color:var(--muted);font-size:.95em}
+    .grid{display:grid;grid-template-columns:1fr;gap:12px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width:700px){.grid-2{grid-template-columns:1fr}}
+    .ok{color:var(--ok);font-weight:700}
+    .hr{height:1px;background:#e5e7eb;margin:18px 0}
+    .btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+    a.inline{color:var(--brand);text-decoration:none}
+    a.inline:hover{text-decoration:underline}
+    .footer-cta{margin:18px 0 6px;text-align:center}
+  </style>
+</head>
+<body>
+<script type="text/javascript">
+	atOptions = {
+		'key' : 'ec629106d819ccf2bda1ce97153afebe',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/ec629106d819ccf2bda1ce97153afebe/invoke.js"></script>
+  <div class="container">
+    <header>
+      <h1>افتح العالم</h1>
+      <a class="cta" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">احصل على وصول فوري</a>
+    </header>
+
+    <div class="card">
+      <p>تخيل أن يكون لديك الإنترنت بالكامل — كل فيلم، كل موقع، كل تجربة — بين يديك.</p>
+      <p>مع NordVPN، يمكنك التحرر من الحدود الرقمية والاستكشاف بلا حدود.</p>
+
+      <div class="lead">الملايين بالفعل يشاهدون، يتسوقون، ويتواصلون بأمان من أي مكان. لا تتأخر.</div>
+
+      <h2>لماذا تقيّد نفسك؟</h2>
+      <p>
+        <a class="inline" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">NordVPN</a> يتيح لك الوصول إلى أي خدمة أو موقع محجوب في بلدك — فوراً وبأمان.
+      </p>
+      <p>شاهد أحدث العروض، ادخل إلى المواقع الحصرية، واستمتع بالويب بلا قيود.</p>
+
+      <div class="card grid-2">
+        <div>
+          <h2>مثال ① افتح نتفلكس حول العالم</h2>
+          <p>شاهد المحتوى المتاح فقط في الخارج — من سلسلة المحقق كونان الكاملة في اليابان إلى أفلام هاري بوتر في المملكة المتحدة — كل ذلك بنقرة واحدة.</p>
+        </div>
+        <div>
+          <h2>مثال ② افتح عالمك</h2>
+          <p>ادخل إلى مكتبات محتوى من عشرات الدول. حتى البرتغال إذا أردت. الخيار لك.</p>
+        </div>
+      </div>
+
+      <h2>اذهب حيث لا يستطيع الآخرون</h2>
+      <p>اتصل بدول محجوبة مثل الصين وتصفح كما لو كنت محلياً.</p>
+
+      <div class="hr"></div>
+
+      <h2>لماذا NordVPN؟</h2>
+      <p>سرعات فائقة، أمان قوي، وحجب إعلانات مدمج — في تطبيق واحد بسيط.</p>
+
+      <div class="card">
+        <h2>عرض خاص — لفترة محدودة</h2>
+        <p>
+          انضم اليوم واحصل على خصم يصل إلى <a class="inline" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">70%</a>.  
+          فقط <a class="inline" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">$3/شهرياً</a> لفتح الإنترنت بالكامل.
+        </p>
+
+        <div class="btn-row">
+          <a class="cta" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">احصل على الخصم</a>
+          <a class="inline" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">شاهد العرض الرسمي</a>
+        </div>
+
+        <p class="note">احمِ ما يصل إلى 10 أجهزة بسعر فنجان قهوة. جرّبه بدون مخاطرة مع ضمان استرداد الأموال خلال 30 يوماً.</p>
+      </div>
+
+      <p>لا تكتفِ بإنترنت أصغر. سيطر على تجربتك وشاهد كل شيء.</p>
+      <p class="ok">اضغط أدناه وابدأ رحلتك العالمية اليوم.</p>
+
+      <div class="footer-cta">
+        <a class="cta" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">افتح مع NordVPN</a>
+      </div>
+    </div>
+  </div>
+<script type="text/javascript">
+	atOptions = {
+		'key' : 'ec629106d819ccf2bda1ce97153afebe',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/ec629106d819ccf2bda1ce97153afebe/invoke.js"></script>
+
+</body>
+</html>
