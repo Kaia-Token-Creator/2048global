@@ -77,7 +77,7 @@
       margin: 0 0 6px;
       font-weight: 700;
       color: #000;
-      font-size: clamp(12px, 3vw, 13px); /* slightly smaller for AR */
+      font-size: clamp(12px, 3vw, 13px);
       letter-spacing: 0.1px;
     }
     .top-link {
@@ -118,6 +118,8 @@
 
     /* Square responsive board */
     .board {
+      /* 좌표계를 LTR로 고정 — Grid 채우기/타일 렌더링의 축을 통일 */
+      direction: ltr;
       background: var(--board);
       border-radius: 14px;
       position: relative;
@@ -140,7 +142,7 @@
       border-radius: 10px;
       display:flex; align-items:center; justify-content:center;
       font-weight: 800;
-      font-size: clamp(16px, 4.8vw, 30px); /* slightly smaller for AR */
+      font-size: clamp(16px, 4.8vw, 30px);
       color: #776e65;
       transition: transform 80ms ease-in, background-color 80ms linear, color 80ms linear;
     }
@@ -198,21 +200,17 @@
   </style>
 </head>
 <body>
-<!-- 헤더 네비게이션 바 (얇고 작은 스타일) -->
 <header style="width:100%;background:#1f2937;color:#fff;
                padding:4px 10px;
                display:flex;justify-content:space-between;align-items:center;
                position:sticky;top:0;z-index:999;font-size:13px;line-height:1;">
-  <!-- 로고/타이틀 -->
   <div style="font-weight:bold;">
     2048 جلوبال — لعبة ويب
   </div>
 
-  <!-- 언어 선택 드롭다운 (links unchanged) -->
   <nav>
     <select aria-label="اللغة" onchange="goLang(this.value)"
-            style="padding:2px 6px;font-size:12px;
-                   border-radius:4px;border:none;">
+            style="padding:2px 6px;font-size:12px;border-radius:4px;border:none;">
       <option value="" selected disabled>🌐 اللغة</option>
       <option value="https://www.2048global.com">Englinsh</option>
       <option value="/CN/index.html">中文</option>
@@ -244,7 +242,6 @@ function goLang(url) {
 <script type="text/javascript" src="//www.highperformanceformat.com/ec629106d819ccf2bda1ce97153afebe/invoke.js"></script>
 
   <div id="app" role="application" aria-label="لعبة 2048">
-    <!-- ===== Top notice ===== -->
     <div class="top-block" aria-label="طريقة اللعب">
       <p class="top-main" style="color: #000;">
         كوّن 2048. استخدم مفاتيح الأسهم أو اسحب!
@@ -271,12 +268,8 @@ function shareSite() {
     navigator.share(shareData).catch(err => console.log(err));
   } else {
     navigator.clipboard.writeText(shareData.url)
-      .then(() => {
-        alert("تم نسخ الرابط");
-      })
-      .catch(err => {
-        console.error("فشل نسخ الرابط:", err);
-      });
+      .then(() => { alert("تم نسخ الرابط"); })
+      .catch(err => { console.error("فشل نسخ الرابط:", err); });
   }
 }
 </script>
@@ -300,8 +293,8 @@ function shareSite() {
       <button id="undoBtn" aria-label="تراجع">تراجع</button>
     </div>
 
-    <!-- ===== Game area ===== -->
     <div class="game-wrap">
+      <!-- 보드는 LTR 강제라 시각/좌표계 문제가 사라집니다 -->
       <div class="board" id="board" tabindex="0" aria-label="لوحة لعبة 4×4" aria-live="polite"></div>
       <div class="overlay" id="overlay" role="dialog" aria-modal="true">
         <div>
@@ -312,7 +305,6 @@ function shareSite() {
       </div>
     </div>
 
-    <!-- 1,000 $ event notice -->
     <div class="event-box" style="text-align:right;">
       <strong>
         <a href="/AR/viral/index.html" target="_blank" style="text-decoration:none; color:inherit;" rel="noopener">
@@ -321,7 +313,6 @@ function shareSite() {
       </strong>
     </div>
 
-    <!-- ===== Blue link under the game ===== -->
     <p class="below-cta">
       <a href="https://partner.bitget.com/bg/J6RM1E" target="_blank" rel="noopener">
         اربح مع تداول العملات بالرافعة المالية.
@@ -342,7 +333,7 @@ function shareSite() {
 </script>
 <script type="text/javascript" src="//www.highperformanceformat.com/ec629106d819ccf2bda1ce97153afebe/invoke.js"></script>
 
-  <!-- ===== Game script: original logic unchanged (only text localized) ===== -->
+  <!-- ===== Game script (logic same; 입력만 RTL 보정) ===== -->
   <script>
   (function(){
     const SIZE = 4;
@@ -357,14 +348,12 @@ function shareSite() {
     const retryBtn = document.getElementById('retry');
     const undoBtn = document.getElementById('undoBtn');
 
+    const IS_RTL = document.documentElement.dir === 'rtl';
+
     const stopScroll = (e) => { e.preventDefault(); };
     ['touchstart','touchmove','wheel'].forEach(evt => {
       boardEl.addEventListener(evt, stopScroll, { passive: false });
     });
-
-    const cellPositions = [];
-    const gap = () => parseFloat(getComputedStyle(boardEl).gap) || 8;
-    const pad = () => parseFloat(getComputedStyle(boardEl).padding) || 8;
 
     function buildCells(){
       boardEl.innerHTML = '';
@@ -530,12 +519,22 @@ function shareSite() {
       boardEl.appendChild(layer);
     }
 
-    const keyMap = {
+    // === 입력 처리 (RTL 보정) ===
+    const keyMapLTR = {
       'ArrowLeft':'left','a':'left','A':'left',
       'ArrowRight':'right','d':'right','D':'right',
       'ArrowUp':'up','w':'up','W':'up',
       'ArrowDown':'down','s':'down','S':'down'
     };
+    const keyMapRTL = {
+      // 좌우만 반전
+      'ArrowLeft':'right','a':'right','A':'right',
+      'ArrowRight':'left','d':'left','D':'left',
+      'ArrowUp':'up','w':'up','W':'up',
+      'ArrowDown':'down','s':'down','S':'down'
+    };
+    const keyMap = IS_RTL ? keyMapRTL : keyMapLTR;
+
     window.addEventListener('keydown', (e)=>{
       const dir = keyMap[e.key];
       if (dir){ e.preventDefault(); move(dir); }
@@ -553,7 +552,10 @@ function shareSite() {
     boardEl.addEventListener('touchend', (e)=>{
       if (!touching) return; touching=false;
       const t = e.changedTouches[0];
-      const dx = t.clientX - touchStartX; const dy = t.clientY - touchStartY;
+      let dx = t.clientX - touchStartX; 
+      const dy = t.clientY - touchStartY;
+      // RTL에서는 좌우 스와이프 해석만 반전해 직관 유지
+      if (IS_RTL) dx = -dx;
       if (Math.max(Math.abs(dx), Math.abs(dy)) < SWIPE_MIN) return;
       if (Math.abs(dx) > Math.abs(dy)) move(dx>0?'right':'left'); else move(dy>0?'down':'up');
     }, { passive:false });
