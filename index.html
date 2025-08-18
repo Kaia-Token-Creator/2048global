@@ -194,19 +194,21 @@
   </style>
 </head>
 <body>
-<!-- 헤더 네비게이션 바 -->
-<header style="width:100%;background:#1f2937;color:#fff;padding:10px 20px;
+<!-- 헤더 네비게이션 바 (얇고 작은 스타일) -->
+<header style="width:100%;background:#1f2937;color:#fff;
+               padding:4px 10px; /* 상하 4px로 얇게 */
                display:flex;justify-content:space-between;align-items:center;
-               position:sticky;top:0;z-index:999;">
+               position:sticky;top:0;z-index:999;font-size:13px;line-height:1;">
   <!-- 로고/타이틀 -->
-  <div style="font-size:18px;font-weight:bold;">
+  <div style="font-weight:bold;">
     2048 Global
   </div>
 
   <!-- 언어 선택 드롭다운 -->
   <nav>
     <select aria-label="Language" onchange="goLang(this.value)"
-            style="padding:6px 10px;border-radius:6px;border:none;font-size:14px;">
+            style="padding:2px 6px;font-size:12px;
+                   border-radius:4px;border:none;">
       <option value="" selected disabled>🌐 Language</option>
       <option value="https://www.2048global.com">Englinsh</option>
       <option value="/CN/index.html">中文</option>
@@ -231,7 +233,7 @@
 <script>
 function goLang(url) {
   if (!url) return;
-  window.location.href = url; // 해당 언어 페이지로 이동
+  window.location.href = url;
 }
 </script>
 
