@@ -1,5 +1,5 @@
 <!DOCTYPE html> 
-<html lang="es">
+<html lang="fr">
 <head>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9891583086388017"
      crossorigin="anonymous"></script>
@@ -13,8 +13,8 @@
 </script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VPN — Desbloquea el Mundo</title>
-  <meta name="description" content="Rompe las fronteras digitales. Haz streaming, navega y explora sin límites — todo con NordVPN." />
+  <title>VPN — Débloquez le monde</title>
+  <meta name="description" content="Libérez-vous des frontières. Regardez, naviguez et explorez sans limites — avec NordVPN." />
 
   <!-- Google Fonts: Jua -->
   <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
@@ -66,61 +66,61 @@
 <script type="text/javascript" src="//www.highperformanceformat.com/ec629106d819ccf2bda1ce97153afebe/invoke.js"></script>
   <div class="container">
     <header>
-      <h1>Desbloquea el Mundo</h1>
-      <a class="cta" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">Acceso Instantáneo</a>
+      <h1>Débloquez le monde</h1>
+      <a class="cta" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">Accès instantané</a>
     </header>
 
     <div class="card">
-      <p>Imagina tener todo el internet — cada película, cada sitio, cada experiencia — al alcance de tu mano.</p>
-      <p>Con NordVPN, puedes romper las fronteras digitales y explorar sin límites.</p>
+      <p>Imaginez avoir tout Internet — chaque film, chaque site, chaque expérience — au bout de vos doigts.</p>
+      <p>Avec NordVPN, libérez-vous des frontières numériques et explorez sans limites.</p>
 
-      <div class="lead">Millones ya están transmitiendo, comprando y conectándose de forma segura desde cualquier lugar. No te quedes atrás.</div>
+      <div class="lead">Des millions de personnes regardent déjà, achètent et se connectent en toute sécurité depuis n’importe où. Ne restez pas en arrière.</div>
 
-      <h2>¿Por qué limitarte?</h2>
+      <h2>Pourquoi vous limiter&nbsp;?</h2>
       <p>
-        <a class="inline" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">NordVPN</a> te permite acceder a cualquier servicio o sitio web bloqueado en tu país — al instante y de forma segura.
+        <a class="inline" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">NordVPN</a> vous permet d’accéder instantanément et en toute sécurité à n’importe quel service ou site web bloqué dans votre pays.
       </p>
-      <p>Mira las series más recientes, accede a sitios exclusivos y vive la web sin restricciones.</p>
+      <p>Regardez les dernières séries, accédez à des sites exclusifs et profitez du web sans restrictions.</p>
 
       <div class="card grid-2">
         <div>
-          <h2>Ejemplo ① Desbloquea Netflix Mundial</h2>
-          <p>Transmite contenido disponible solo en el extranjero — desde toda la serie Detective Conan de Japón hasta las películas de Harry Potter del Reino Unido — todo con un clic.</p>
+          <h2>Exemple ① Débloquez Netflix dans le monde entier</h2>
+          <p>Diffusez du contenu uniquement disponible à l’étranger — de la série complète Détective Conan au Japon aux films Harry Potter au Royaume-Uni — le tout en un clic.</p>
         </div>
         <div>
-          <h2>Ejemplo ② Abre Tu Mundo</h2>
-          <p>Accede a bibliotecas de contenido de docenas de países. Incluso conéctate a Por... sí, Portugal si quieres. ¡La elección es tuya!</p>
+          <h2>Exemple ② Ouvrez votre monde</h2>
+          <p>Accédez aux bibliothèques de contenu de dizaines de pays. Connectez-vous même au Portugal si vous le souhaitez. Le choix vous appartient.</p>
         </div>
       </div>
 
-      <h2>Ve donde otros no pueden</h2>
-      <p>Conéctate a países restringidos como China y navega como si fueras un local.</p>
+      <h2>Allez où d’autres ne peuvent pas</h2>
+      <p>Connectez-vous à des pays restreints comme la Chine et naviguez comme si vous étiez un local.</p>
 
       <div class="hr"></div>
 
-      <h2>¿Por qué NordVPN?</h2>
-      <p>Velocidades ultrarrápidas, seguridad potente y bloqueo de anuncios integrado — todo en una aplicación sencilla.</p>
+      <h2>Pourquoi NordVPN&nbsp;?</h2>
+      <p>Vitesses fulgurantes, sécurité puissante et bloqueur de publicités intégré — tout dans une seule application simple.</p>
 
       <div class="card">
-        <h2>Oferta Especial — Tiempo Limitado</h2>
+        <h2>Offre spéciale — Temps limité</h2>
         <p>
-          Únete hoy y obtén hasta un <a class="inline" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">70% DE DESCUENTO</a>.  
-          Eso es solo <a class="inline" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">$3/mes</a> para desbloquear todo internet.
+          Rejoignez aujourd’hui et bénéficiez jusqu’à <a class="inline" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">70% DE RÉDUCTION</a>.  
+          Cela revient à seulement <a class="inline" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">$3/mois</a> pour débloquer tout Internet.
         </p>
 
         <div class="btn-row">
-          <a class="cta" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">Reclama tu Descuento</a>
-          <a class="inline" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">Ver Promoción Oficial</a>
+          <a class="cta" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">Obtenez la remise</a>
+          <a class="inline" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">Voir la promo officielle</a>
         </div>
 
-        <p class="note">Protege hasta 10 dispositivos por el precio de un café. Pruébalo sin riesgo con nuestra garantía de reembolso de 30 días.</p>
+        <p class="note">Protégez jusqu’à 10 appareils pour le prix d’un café. Essayez sans risque avec notre garantie de remboursement de 30 jours.</p>
       </div>
 
-      <p>No te conformes con un internet más pequeño. Toma el control y descúbrelo todo.</p>
-      <p class="ok">Haz clic abajo y comienza tu viaje global hoy mismo.</p>
+      <p>Ne vous contentez pas d’un Internet limité. Prenez le contrôle et voyez tout.</p>
+      <p class="ok">Cliquez ci-dessous et commencez votre voyage global dès aujourd’hui.</p>
 
       <div class="footer-cta">
-        <a class="cta" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">Desbloquea con NordVPN</a>
+        <a class="cta" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">Débloquez avec NordVPN</a>
       </div>
     </div>
   </div>
