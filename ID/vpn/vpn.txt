@@ -1,0 +1,141 @@
+<!DOCTYPE html> 
+<html lang="id">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9891583086388017"
+     crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F00NF909N7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F00NF909N7');
+</script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VPN — Buka Dunia</title>
+  <meta name="description" content="Bebas dari batasan. Streaming, browsing, dan jelajahi tanpa batas — semuanya dengan NordVPN." />
+  <meta name="language" content="id">
+  <meta property="og:locale" content="id_ID">
+
+  <!-- Google Fonts: Jua -->
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#fafafa; --text:#1f2937; --muted:#6b7280; --brand:#0ea5e9; --brand-dark:#0284c7; --card:#ffffff; --accent:#fde68a; --ok:#16a34a;
+    }
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:'Jua', sans-serif;
+      line-height:1.65
+    }
+    .container{max-width:860px;margin:0 auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:8px 0 18px}
+    h1{margin:0;font-size:clamp(22px,5.4vw,32px)}
+    .cta{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;padding:10px 16px;border-radius:12px;font-weight:700}
+    .cta:hover{background:var(--brand-dark)}
+    .card{background:var(--card);border-radius:14px;padding:18px 18px;box-shadow:0 2px 10px rgba(0,0,0,.05);margin:14px 0}
+    .lead{background:var(--accent);padding:10px 12px;border-radius:10px;margin:10px 0;font-weight:700}
+    h2{margin:10px 0 8px;font-size:clamp(18px,4.4vw,24px)}
+    p{margin:8px 0}
+    ul{margin:8px 0 8px 20px}
+    .note{color:var(--muted);font-size:.95em}
+    .grid{display:grid;grid-template-columns:1fr;gap:12px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width:700px){.grid-2{grid-template-columns:1fr}}
+    .ok{color:var(--ok);font-weight:700}
+    .hr{height:1px;background:#e5e7eb;margin:18px 0}
+    .btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+    a.inline{color:var(--brand);text-decoration:none}
+    a.inline:hover{text-decoration:underline}
+    .footer-cta{margin:18px 0 6px;text-align:center}
+  </style>
+</head>
+<body>
+<script type="text/javascript">
+	atOptions = {
+		'key' : 'ec629106d819ccf2bda1ce97153afebe',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/ec629106d819ccf2bda1ce97153afebe/invoke.js"></script>
+  <div class="container">
+    <header>
+      <h1>Buka Dunia</h1>
+      <a class="cta" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">Dapatkan Akses Instan</a>
+    </header>
+
+    <div class="card">
+      <p>Bayangkan memiliki seluruh internet — setiap film, setiap situs, setiap pengalaman — tepat di ujung jari Anda.</p>
+      <p>Dengan NordVPN, Anda bisa bebas dari batasan digital dan menjelajah tanpa batas.</p>
+
+      <div class="lead">Jutaan orang sudah streaming, belanja, dan terhubung dengan aman dari mana saja. Jangan sampai tertinggal.</div>
+
+      <h2>Mengapa Membatasi Diri?</h2>
+      <p>
+        <a class="inline" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">NordVPN</a> memungkinkan Anda mengakses layanan atau situs web apa pun yang diblokir di negara Anda — secara instan dan aman.
+      </p>
+      <p>Tonton acara terbaru, akses situs eksklusif, dan rasakan web tanpa batasan.</p>
+
+      <div class="card grid-2">
+        <div>
+          <h2>Contoh ① Buka Netflix Seluruh Dunia</h2>
+          <p>Streaming konten yang hanya tersedia di luar negeri — dari serial lengkap Detective Conan di Jepang hingga film Harry Potter di Inggris — semua hanya dengan satu klik.</p>
+        </div>
+        <div>
+          <h2>Contoh ② Buka Dunia Anda</h2>
+          <p>Akses perpustakaan konten dari puluhan negara. Bahkan bisa terhubung ke Portugal jika Anda mau. Pilihannya ada di tangan Anda.</p>
+        </div>
+      </div>
+
+      <h2>Pergi ke Tempat yang Tidak Bisa Orang Lain</h2>
+      <p>Terhubung ke negara terbatas seperti Tiongkok dan berselancar seolah-olah Anda adalah penduduk lokal.</p>
+
+      <div class="hr"></div>
+
+      <h2>Mengapa NordVPN?</h2>
+      <p>Kecepatan super cepat, keamanan kuat, dan pemblokiran iklan bawaan — semua dalam satu aplikasi sederhana.</p>
+
+      <div class="card">
+        <h2>Penawaran Spesial — Waktu Terbatas</h2>
+        <p>
+          Bergabung hari ini dan dapatkan hingga <a class="inline" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">70% OFF</a>.  
+          Hanya <a class="inline" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">$3/bulan</a> untuk membuka seluruh internet.
+        </p>
+
+        <div class="btn-row">
+          <a class="cta" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">Klaim Diskon Anda</a>
+          <a class="inline" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">Lihat Promo Resmi</a>
+        </div>
+
+        <p class="note">Lindungi hingga 10 perangkat dengan harga secangkir kopi. Coba bebas risiko dengan jaminan uang kembali 30 hari.</p>
+      </div>
+
+      <p>Jangan puas dengan internet yang lebih kecil. Ambil kendali dan lihat semuanya.</p>
+      <p class="ok">Klik di bawah dan mulailah perjalanan global Anda hari ini.</p>
+
+      <div class="footer-cta">
+        <a class="cta" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">Buka dengan NordVPN</a>
+      </div>
+    </div>
+  </div>
+<script type="text/javascript">
+	atOptions = {
+		'key' : 'ec629106d819ccf2bda1ce97153afebe',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/ec629106d819ccf2bda1ce97153afebe/invoke.js"></script>
+
+</body>
+</html>
