@@ -1,0 +1,139 @@
+<!DOCTYPE html> 
+<html lang="nl">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9891583086388017"
+     crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F00NF909N7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F00NF909N7');
+</script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VPN — Ontgrendel de Wereld</title>
+  <meta name="description" content="Breek los van grenzen. Stream, surf en ontdek zonder beperkingen — allemaal met NordVPN." />
+
+  <!-- Google Fonts: Jua -->
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#fafafa; --text:#1f2937; --muted:#6b7280; --brand:#0ea5e9; --brand-dark:#0284c7; --card:#ffffff; --accent:#fde68a; --ok:#16a34a;
+    }
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:'Jua', sans-serif;
+      line-height:1.65
+    }
+    .container{max-width:860px;margin:0 auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:8px 0 18px}
+    h1{margin:0;font-size:clamp(22px,5.4vw,32px)}
+    .cta{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;padding:10px 16px;border-radius:12px;font-weight:700}
+    .cta:hover{background:var(--brand-dark)}
+    .card{background:var(--card);border-radius:14px;padding:18px 18px;box-shadow:0 2px 10px rgba(0,0,0,.05);margin:14px 0}
+    .lead{background:var(--accent);padding:10px 12px;border-radius:10px;margin:10px 0;font-weight:700}
+    h2{margin:10px 0 8px;font-size:clamp(18px,4.4vw,24px)}
+    p{margin:8px 0}
+    ul{margin:8px 0 8px 20px}
+    .note{color:var(--muted);font-size:.95em}
+    .grid{display:grid;grid-template-columns:1fr;gap:12px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width:700px){.grid-2{grid-template-columns:1fr}}
+    .ok{color:var(--ok);font-weight:700}
+    .hr{height:1px;background:#e5e7eb;margin:18px 0}
+    .btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+    a.inline{color:var(--brand);text-decoration:none}
+    a.inline:hover{text-decoration:underline}
+    .footer-cta{margin:18px 0 6px;text-align:center}
+  </style>
+</head>
+<body>
+<script type="text/javascript">
+	atOptions = {
+		'key' : 'ec629106d819ccf2bda1ce97153afebe',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/ec629106d819ccf2bda1ce97153afebe/invoke.js"></script>
+  <div class="container">
+    <header>
+      <h1>Ontgrendel de Wereld</h1>
+      <a class="cta" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">Directe Toegang</a>
+    </header>
+
+    <div class="card">
+      <p>Stel je voor dat je het hele internet — elke film, elke site, elke ervaring — binnen handbereik hebt.</p>
+      <p>Met NordVPN kun je losbreken van digitale grenzen en zonder beperkingen ontdekken.</p>
+
+      <div class="lead">Miljoenen streamen, shoppen en verbinden zich al veilig van overal. Zorg dat je niet achterblijft.</div>
+
+      <h2>Waarom Jezelf Beperken?</h2>
+      <p>
+        <a class="inline" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">NordVPN</a> geeft je directe en veilige toegang tot elke dienst of website die in jouw land geblokkeerd is.
+      </p>
+      <p>Bekijk de nieuwste shows, krijg toegang tot exclusieve sites en ervaar het web zonder restricties.</p>
+
+      <div class="card grid-2">
+        <div>
+          <h2>Voorbeeld ① Ontgrendel Netflix Wereldwijd</h2>
+          <p>Stream content die alleen in het buitenland beschikbaar is — van Japan’s volledige Detective Conan-serie tot de Britse Harry Potter-films — allemaal met één klik.</p>
+        </div>
+        <div>
+          <h2>Voorbeeld ② Open Je Wereld</h2>
+          <p>Krijg toegang tot contentbibliotheken uit tientallen landen. Verbind zelfs met Portugal als je dat wilt. De keuze is aan jou.</p>
+        </div>
+      </div>
+
+      <h2>Ga Waar Anderen Niet Kunnen</h2>
+      <p>Verbind met landen met restricties zoals China en surf alsof je een lokale gebruiker bent.</p>
+
+      <div class="hr"></div>
+
+      <h2>Waarom NordVPN?</h2>
+      <p>Razendsnelle snelheid, krachtige beveiliging en ingebouwde adblocker — allemaal in één simpele app.</p>
+
+      <div class="card">
+        <h2>Speciaal Aanbod — Beperkte Tijd</h2>
+        <p>
+          Meld je vandaag aan en ontvang tot <a class="inline" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">70% KORTING</a>.  
+          Dat is slechts <a class="inline" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">$3/maand</a> om het hele internet te ontgrendelen.
+        </p>
+
+        <div class="btn-row">
+          <a class="cta" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">Claim Je Korting</a>
+          <a class="inline" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">Bekijk Officiële Promo</a>
+        </div>
+
+        <p class="note">Bescherm tot 10 apparaten voor de prijs van een kop koffie. Probeer het risicovrij met onze 30-dagen-geld-terug-garantie.</p>
+      </div>
+
+      <p>Neem geen genoegen met een kleiner internet. Neem de controle en zie alles.</p>
+      <p class="ok">Klik hieronder en begin vandaag nog aan je wereldwijde reis.</p>
+
+      <div class="footer-cta">
+        <a class="cta" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">Ontgrendel met NordVPN</a>
+      </div>
+    </div>
+  </div>
+<script type="text/javascript">
+	atOptions = {
+		'key' : 'ec629106d819ccf2bda1ce97153afebe',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/ec629106d819ccf2bda1ce97153afebe/invoke.js"></script>
+
+</body>
+</html>
