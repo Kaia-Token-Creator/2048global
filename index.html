@@ -194,6 +194,47 @@
   </style>
 </head>
 <body>
+<!-- 헤더 네비게이션 바 -->
+<header style="width:100%;background:#1f2937;color:#fff;padding:10px 20px;
+               display:flex;justify-content:space-between;align-items:center;
+               position:sticky;top:0;z-index:999;">
+  <!-- 로고/타이틀 -->
+  <div style="font-size:18px;font-weight:bold;">
+    2048 Global
+  </div>
+
+  <!-- 언어 선택 드롭다운 -->
+  <nav>
+    <select aria-label="Language" onchange="goLang(this.value)"
+            style="padding:6px 10px;border-radius:6px;border:none;font-size:14px;">
+      <option value="" selected disabled>🌐 Language</option>
+      <option value="https://www.2048global.com">Englinsh</option>
+      <option value="/CN/index.html">中文</option>
+      <option value="/ES/index.html">Español</option>
+      <option value="/JA/index.html">日本語</option>
+      <option value="/FR/index.html">Français</option>
+      <option value="/IT/index.html">Italiano</option>
+      <option value="/NL/index.html">Nederlands</option>
+      <option value="/PT/index.html">Português</option>
+      <option value="/HI/index.html">हिन्दी</option>
+      <option value="/AR/index.html">العربية</option>
+      <option value="/BN/index.html">বাংলা</option>
+      <option value="/RU/index.html">Русский</option>
+      <option value="/ID/index.html">Bahasa Indonesia</option>
+      <option value="/VI/index.html">Tiếng Việt</option>
+      <option value="/TH/index.html">ไทย</option>
+      <option value="/MYA/index.html">မြန်မာ</option>
+    </select>
+  </nav>
+</header>
+
+<script>
+function goLang(url) {
+  if (!url) return;
+  window.location.href = url; // 해당 언어 페이지로 이동
+}
+</script>
+
 <script type="text/javascript" src="//www.highperformanceformat.com/ec629106d819ccf2bda1ce97153afebe/invoke.js"></script>
   <div id="app" role="application" aria-label="2048 Game">
     <!-- ===== Top notice (plain text + blue link) ===== -->
