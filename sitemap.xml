@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- 메인 도메인 -->
+  <url>
+    <loc>https://2048global.com/</loc>
+  </url>
+
+  <!-- 언어/기타 폴더 -->
+  <url>
+    <loc>https://2048global.com/AR/</loc>
+  </url>
+  <url>
+    <loc>https://2048global.com/BN/</loc>
+  </url>
+  <url>
+    <loc>https://2048global.com/CN/</loc>
+  </url>
+  <url>
+    <loc>https://2048global.com/ES/</loc>
+  </url>
+  <url>
+    <loc>https://2048global.com/FR/</loc>
+  </url>
+  <url>
+    <loc>https://2048global.com/HI/</loc>
+  </url>
+  <url>
+    <loc>https://2048global.com/ID/</loc>
+  </url>
+  <url>
+    <loc>https://2048global.com/IT/</loc>
+  </url>
+  <url>
+    <loc>https://2048global.com/JA/</loc>
+  </url>
+  <url>
+    <loc>https://2048global.com/MYA/</loc>
+  </url>
+  <url>
+    <loc>https://2048global.com/NL/</loc>
+  </url>
+  <url>
+    <loc>https://2048global.com/PT/</loc>
+  </url>
+  <url>
+    <loc>https://2048global.com/RU/</loc>
+  </url>
+  <url>
+    <loc>https://2048global.com/TH/</loc>
+  </url>
+  <url>
+    <loc>https://2048global.com/VI/</loc>
+  </url>
+  <url>
+    <loc>https://2048global.com/sol/</loc>
+  </url>
+  <url>
+    <loc>https://2048global.com/viral/</loc>
+  </url>
+  <url>
+    <loc>https://2048global.com/vpn/</loc>
+  </url>
+
+</urlset>
