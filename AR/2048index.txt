@@ -118,7 +118,7 @@
 
     /* Square responsive board */
     .board {
-      /* 좌표계를 LTR로 고정 — Grid 채우기/타일 렌더링의 축을 통일 */
+      /* 보드 렌더링 좌표계만 LTR로 고정 (UI는 RTL 유지) */
       direction: ltr;
       background: var(--board);
       border-radius: 14px;
@@ -294,7 +294,6 @@ function shareSite() {
     </div>
 
     <div class="game-wrap">
-      <!-- 보드는 LTR 강제라 시각/좌표계 문제가 사라집니다 -->
       <div class="board" id="board" tabindex="0" aria-label="لوحة لعبة 4×4" aria-live="polite"></div>
       <div class="overlay" id="overlay" role="dialog" aria-modal="true">
         <div>
@@ -333,7 +332,7 @@ function shareSite() {
 </script>
 <script type="text/javascript" src="//www.highperformanceformat.com/ec629106d819ccf2bda1ce97153afebe/invoke.js"></script>
 
-  <!-- ===== Game script (logic same; 입력만 RTL 보정) ===== -->
+  <!-- ===== Game script (좌우 반전 제거: LTR과 동일 조작) ===== -->
   <script>
   (function(){
     const SIZE = 4;
@@ -347,8 +346,6 @@ function shareSite() {
     const newGameBtn = document.getElementById('newGame');
     const retryBtn = document.getElementById('retry');
     const undoBtn = document.getElementById('undoBtn');
-
-    const IS_RTL = document.documentElement.dir === 'rtl';
 
     const stopScroll = (e) => { e.preventDefault(); };
     ['touchstart','touchmove','wheel'].forEach(evt => {
@@ -519,21 +516,13 @@ function shareSite() {
       boardEl.appendChild(layer);
     }
 
-    // === 입력 처리 (RTL 보정) ===
-    const keyMapLTR = {
+    // === 입력 처리: 좌우 반전 없이 LTR과 동일 ===
+    const keyMap = {
       'ArrowLeft':'left','a':'left','A':'left',
       'ArrowRight':'right','d':'right','D':'right',
       'ArrowUp':'up','w':'up','W':'up',
       'ArrowDown':'down','s':'down','S':'down'
     };
-    const keyMapRTL = {
-      // 좌우만 반전
-      'ArrowLeft':'right','a':'right','A':'right',
-      'ArrowRight':'left','d':'left','D':'left',
-      'ArrowUp':'up','w':'up','W':'up',
-      'ArrowDown':'down','s':'down','S':'down'
-    };
-    const keyMap = IS_RTL ? keyMapRTL : keyMapLTR;
 
     window.addEventListener('keydown', (e)=>{
       const dir = keyMap[e.key];
@@ -552,10 +541,8 @@ function shareSite() {
     boardEl.addEventListener('touchend', (e)=>{
       if (!touching) return; touching=false;
       const t = e.changedTouches[0];
-      let dx = t.clientX - touchStartX; 
+      const dx = t.clientX - touchStartX; 
       const dy = t.clientY - touchStartY;
-      // RTL에서는 좌우 스와이프 해석만 반전해 직관 유지
-      if (IS_RTL) dx = -dx;
       if (Math.max(Math.abs(dx), Math.abs(dy)) < SWIPE_MIN) return;
       if (Math.abs(dx) > Math.abs(dy)) move(dx>0?'right':'left'); else move(dy>0?'down':'up');
     }, { passive:false });
