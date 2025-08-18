@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9891583086388017"
      crossorigin="anonymous"></script>
@@ -14,8 +14,8 @@
 </script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>event — 2048 Global</title>
-  <meta name="description" content="2048 Global Event" />
+  <title>活动 — 2048 Global</title>
+  <meta name="description" content="2048 Global 每月活动" />
   <link rel="icon" href="/favicon.ico">
   <meta name="theme-color" content="#faf8ef">
   <style>
@@ -23,17 +23,17 @@
       --bg:#faf8ef;
       --text:#2b2b2b;
       --muted:#6b7280;
-      --brand:#2563eb;   /* blue link */
-      --accent:#d9534f;  /* highlight color (1000$) */
+      --brand:#2563eb;
+      --accent:#d9534f;
       --card:#ffffff;
-      --board:#bbada0;   /* match index tone */
+      --board:#bbada0;
     }
     *{box-sizing:border-box}
     html,body{
       margin:0;
       background:var(--bg);
       color:var(--text);
-      font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans KR",AppleSDGothicNeo,Helvetica,Arial,sans-serif;
+      font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans SC","Noto Sans KR",Helvetica,Arial,sans-serif;
       line-height:1.75;
     }
     .wrap{
@@ -103,29 +103,29 @@
 <script type="text/javascript" src="//www.highperformanceformat.com/ec629106d819ccf2bda1ce97153afebe/invoke.js"></script>
   <div class="wrap">
     <header>
-      <h1>Event</h1>
-      <a class="btn" href="https://www.2048global.com" target="_blank" rel="noopener">Home</a>
+      <h1>活动</h1>
+      <a class="btn" href="https://www.2048global.com" target="_blank" rel="noopener">首页</a>
     </header>
 
     <div class="card">
-      <p class="lead">We give <span class="highlight">1,000$</span> every month to 2048 players</p>
+      <p class="lead">我们每月送出 <span class="highlight">1,000$</span> 给 2048 玩家</p>
 
       <ol>
         <li>
-          In a chat room (private/group) or on SNS (including YouTube, TikTok), forums, comments, etc.,  
-          post the message <strong>“Can anyone beat this?”</strong> along with the exact link  
-          <a href="https://www.2048global.com" target="_blank" rel="noopener">www.2048global.com</a>.
+          在聊天群（私聊/群组）或社交媒体（包括 YouTube、TikTok）、论坛、评论等处，  
+          发布消息 <strong>“谁能打破纪录？”</strong> 并附上准确的链接  
+          <a href="https://www.2048global.com" target="_blank" rel="noopener">www.2048global.com</a>。
         </li>
         <li>
-          Send a screenshot and your paypal or other (coin wallet for USDT possible) account number to  
-          <a href="mailto:showmetheaitools@gmail.com">showmetheaitools@gmail.com</a>.
+          将截图和你的 PayPal 或其他账户（也可使用 USDT 钱包地址）发送至  
+          <a href="mailto:showmetheaitools@gmail.com">showmetheaitools@gmail.com</a>。
         </li>
         <li>
-          One winner will be selected each month to receive <strong>1,000$</strong>.
+          每月将随机抽取一位获奖者，获得 <strong>1,000$</strong>。
         </li>
       </ol>
 
-      <p>🎉 August Winner is ??!!!</p>
+      <p>🎉 本月的主角是谁？! 中奖者将通过邮件通知。</p>
 
       <footer>
 <script type="text/javascript">
