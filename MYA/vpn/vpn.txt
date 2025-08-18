@@ -1,0 +1,139 @@
+<!DOCTYPE html> 
+<html lang="my">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9891583086388017"
+     crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F00NF909N7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F00NF909N7');
+</script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VPN — ကမ္ဘာကို ဖွင့်လိုက်ပါ</title>
+  <meta name="description" content="ကန့်သတ်ချက်တွေကို ကျော်ဖြတ်ပြီး — NordVPN နဲ့ ကမ္ဘာတစ်ဝှမ်း အခမဲ့ စူးစမ်းလိုက်ပါ။" />
+
+  <!-- Google Fonts: Noto Sans Myanmar -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#fafafa; --text:#1f2937; --muted:#6b7280; --brand:#0ea5e9; --brand-dark:#0284c7; --card:#ffffff; --accent:#fde68a; --ok:#16a34a;
+    }
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:'Noto Sans Myanmar', sans-serif;
+      line-height:1.65
+    }
+    .container{max-width:860px;margin:0 auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:8px 0 18px}
+    h1{margin:0;font-size:clamp(22px,5.4vw,32px)}
+    .cta{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;padding:10px 16px;border-radius:12px;font-weight:700}
+    .cta:hover{background:var(--brand-dark)}
+    .card{background:var(--card);border-radius:14px;padding:18px 18px;box-shadow:0 2px 10px rgba(0,0,0,.05);margin:14px 0}
+    .lead{background:var(--accent);padding:10px 12px;border-radius:10px;margin:10px 0;font-weight:700}
+    h2{margin:10px 0 8px;font-size:clamp(18px,4.4vw,24px)}
+    p{margin:8px 0}
+    ul{margin:8px 0 8px 20px}
+    .note{color:var(--muted);font-size:.95em}
+    .grid{display:grid;grid-template-columns:1fr;gap:12px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width:700px){.grid-2{grid-template-columns:1fr}}
+    .ok{color:var(--ok);font-weight:700}
+    .hr{height:1px;background:#e5e7eb;margin:18px 0}
+    .btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+    a.inline{color:var(--brand);text-decoration:none}
+    a.inline:hover{text-decoration:underline}
+    .footer-cta{margin:18px 0 6px;text-align:center}
+  </style>
+</head>
+<body>
+<script type="text/javascript">
+	atOptions = {
+		'key' : 'ec629106d819ccf2bda1ce97153afebe',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/ec629106d819ccf2bda1ce97153afebe/invoke.js"></script>
+  <div class="container">
+    <header>
+      <h1>ကမ္ဘာကို ဖွင့်လိုက်ပါ</h1>
+      <a class="cta" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">ချက်ချင်း အသုံးပြုမည်</a>
+    </header>
+
+    <div class="card">
+      <p>အင်တာနက်တစ်ခုလုံးကို — ရုပ်ရှင်တိုင်း၊ ဝဘ်ဆိုဒ်တိုင်း၊ အတွေ့အကြုံတိုင်း — သင့်လက်ထဲမှာပဲ ရှိနေတယ်လို့ စဉ်းစားပါ။</p>
+      <p>NordVPN နဲ့အတူ ကန့်သတ်ချက်တွေကို ကျော်လွှားပြီး ကမ္ဘာတစ်ဝှမ်းကို ကန့်သတ်မရှိ စူးစမ်းနိုင်ပါသည်။</p>
+
+      <div class="lead">မီလီယံချီသောသူများသည် အခုပဲ စီးပွားရေးလုပ်၊ ဝယ်ယူ၊ အဆင်ပြေစွာ ချိတ်ဆက်နေပြီးဖြစ်သည်။ သင့်အနေနဲ့ လက်လွတ်မခံပါနဲ့။</div>
+
+      <h2>ဘာကြောင့် ကိုယ်ကို ကန့်သတ်ရတာလဲ?</h2>
+      <p>
+        <a class="inline" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">NordVPN</a> သည် သင့်နိုင်ငံတွင် ပိတ်ထားသည့် ဝန်ဆောင်မှုများနှင့် ဝဘ်ဆိုဒ်များကို ချက်ချင်း အဆင်ပြေစွာ ဝင်ရောက်နိုင်စေသည်။
+      </p>
+      <p>နောက်ဆုံးထွက် ရုပ်ရှင်များကြည့်ပါ၊ သီးသန့်ဝဘ်ဆိုဒ်များဝင်ပါ၊ ကန့်သတ်မဲ့အင်တာနက်ကို သဘောကျအောင် အသုံးပြုပါ။</p>
+
+      <div class="card grid-2">
+        <div>
+          <h2>ဥပမာ ① ကမ္ဘာအနှံ့ Netflix ကို ဖွင့်ပါ</h2>
+          <p>ဂျပန်၏ Conan စီးရီး အပြည့်အစုံမှ စ၍ အင်္ဂလန်၏ Harry Potter ရုပ်ရှင်များအထိ — တစ်ချက်နొక్కလျှင် စီးကြောင်းထွက်နိုင်သည်။</p>
+        </div>
+        <div>
+          <h2>ဥပမာ ② သင့်ကမ္ဘာကို ချဲ့ပါ</h2>
+          <p>နိုင်ငံအများအပြားမှ အကြောင်းအရာများကို ဝင်ရောက်ကြည့်ရှုနိုင်သည်။ မကြာခဏ Portugal လည်း ချိတ်ဆက်နိုင်ပါတယ်။ မင်း အလိုလိုက်ရွေးပါ။</p>
+        </div>
+      </div>
+
+      <h2>အခြားသူများ မဝင်နိုင်သည့်နေရာသို့ သွားပါ</h2>
+      <p>တရုတ်လို ကန့်သတ်ထားသည့် နိုင်ငံများတွင်ပင် သေချာစွာ လိုကယ်လိုက်သကဲ့သို့ ဝင်ရောက်ကြည့်ရှုနိုင်ပါသည်။</p>
+
+      <div class="hr"></div>
+
+      <h2>ဘာကြောင့် NordVPN?</h2>
+      <p>လျင်မြန်သော အမြန်နှုန်း၊ ခိုင်ခံ့သော လုံခြုံရေးနှင့် built-in ကြော်ငြာပိတ်စက် — အားလုံးကို တစ်ပေါက်တည်းထဲမှာ သုံးနိုင်သည်။</p>
+
+      <div class="card">
+        <h2>အထူးပရိုမိုးရှင်း — ကန့်သတ်ချိန်</h2>
+        <p>
+          ယနေ့ အဖွဲ့ဝင် joins လုပ်ပြီး <a class="inline" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">70% အထိ လျှော့စျေး</a> ရယူလိုက်ပါ။  
+          အဲဒါက တစ်လလျှင် <a class="inline" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">$3</a> ပဲ — အင်တာနက်တစ်ခုလုံး ဖွင့်နိုင်ပါသည်။
+        </p>
+
+        <div class="btn-row">
+          <a class="cta" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">လျှော့စျေး ရယူပါ</a>
+          <a class="inline" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">အကြောင်းအရာအပေါ် တရားဝင်ကြည့်ပါ</a>
+        </div>
+
+        <p class="note">စျေးတစ်ခါပဲပေးပြီး စက် 10 စက်အထိ ကာကွယ်ပေးပါသည်။ 30 ရက်အတွင်း အမေရိကန်ပြန်ပေးမည် သဘောတူညီချက်နဲ့ အန္တရာယ်မရှိ စမ်းသပ်ကြည့်ပါ။</p>
+      </div>
+
+      <p>အသေးစိတ် အင်တာနက်ကို မကျေနပ်ပါနဲ့။ သင့်အင်တာနက်ကို သင့်အလိုလိုက် ထိန်းချုပ်လိုက်ပါ။</p>
+      <p class="ok">အောက်တွင် နှိပ်ပြီး သင့် ကမ္ဘာလုံးဆိုင်ရာ ခရီးစဉ် စတင်လိုက်ပါ။</p>
+
+      <div class="footer-cta">
+        <a class="cta" href="https://go.nordvpn.net/aff_c?offer_id=476&aff_id=86956" target="_blank" rel="noopener">NordVPN နဲ့ ဖွင့်ပါ</a>
+      </div>
+    </div>
+  </div>
+<script type="text/javascript">
+	atOptions = {
+		'key' : 'ec629106d819ccf2bda1ce97153afebe',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/ec629106d819ccf2bda1ce97153afebe/invoke.js"></script>
+
+</body>
+</html>
