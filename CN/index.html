@@ -1,57 +1,63 @@
 <!DOCTYPE html> 
-<html lang="en">
+<html lang="zh-CN">
 <head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9891583086388017"
+     crossorigin="anonymous"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F00NF909N7"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-F00NF909N7');
 </script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>2048 Global</title>
-<meta name="description" content="2048 Global! Can you beat it?">
 
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="2048 Global">
-<meta property="og:title" content="2048 Global! Can you beat it?">
-<meta property="og:description" content="2048 Global! Can you beat it?">
-<meta property="og:url" content="https://www.2048global.com">
-<meta property="og:image" content="https://2048global.com/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+  <title>2048 Global 网页版</title>
+  <meta name="description" content="你能通关吗？2048 Global 网页版。使用方向键或滑动来玩！">
 
-<!-- X(Twitter) Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="2048 Global! Can you beat it?">
-<meta name="twitter:description" content="2048 Global! Can you beat it?">
-<meta name="twitter:image" content="2048global.com/og-image.jpg">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="2048 Global">
+  <meta property="og:title" content="2048 Global 网页版 — 你能通关吗？">
+  <meta property="og:description" content="2048 Global 网页版。使用方向键或滑动来玩！">
+  <meta property="og:url" content="https://www.2048global.com/CN/">
+  <meta property="og:image" content="https://2048global.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
-<!-- Favicon / App Icon -->
-<link rel="icon" href="/favicon.ico">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="theme-color" content="#faf8ef">
+  <!-- X(Twitter) Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="2048 Global 网页版 — 你能通关吗？">
+  <meta name="twitter:description" content="2048 Global 网页版。使用方向键或滑动来玩！">
+  <meta name="twitter:image" content="https://2048global.com/og-image.jpg">
+
+  <!-- Favicon / App Icon -->
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#faf8ef">
+
+  <!-- 中文字体（可选） -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg: #faf8ef;
       --board: #bbada0;
       --tile-empty: #cdc1b4;
-      --text: #2b2b2b; /* darker for readability */
+      --text: #2b2b2b;
       --accent: #8f7a66;
       --tile-2: #eee4da; --tile-4: #ede0c8; --tile-8: #f2b179; --tile-16: #f59563; --tile-32: #f67c5f; --tile-64: #f65e3b;
       --tile-128: #edcf72; --tile-256: #edcc61; --tile-512: #edc850; --tile-1024: #edc53f; --tile-2048: #edc22e;
-      --blue: #2563eb; /* link color */
+      --blue: #2563eb;
     }
     html, body {
       height: 100%;
       margin: 0;
       background: var(--bg);
       color: var(--text);
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", AppleSDGothicNeo, Helvetica, Arial, sans-serif;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans SC", "Noto Sans KR", Helvetica, Arial, sans-serif;
     }
     /* Prevent page scroll while interacting */
     body, #app, .game-wrap, .board {
@@ -70,13 +76,13 @@
     .top-main {
       margin: 0 0 6px;
       font-weight: 700;
-      color: #000; /* black */
-      font-size: clamp(13px, 3.2vw, 14px);
+      color: #000;
+      font-size: clamp(12px, 3.2vw, 13px); /* 简体中文略小 */
       letter-spacing: 0.1px;
     }
     .top-link {
       margin: 0;
-      font-size: clamp(13px, 3.2vw, 14px);
+      font-size: clamp(12px, 3.2vw, 13px);
     }
     .top-link a {
       color: var(--blue);
@@ -87,7 +93,7 @@
     .below-cta {
       margin: 18px 0 6px;
       text-align: left;
-      font-size: clamp(13px, 3.2vw, 14px);
+      font-size: clamp(12px, 3.2vw, 13px);
     }
     .below-cta a {
       color: var(--blue);
@@ -100,11 +106,11 @@
     h1 { font-size: clamp(20px, 6vw, 36px); margin: 0; letter-spacing: 0.5px; }
     .badges { display:flex; gap: 8px; }
     .badge { background: #bbada0; color: #fff; padding: 8px 12px; border-radius: 10px; text-align:center; min-width: 84px; }
-    .badge .label { font-size: 12px; opacity: .9; }
-    .badge .val { font-size: 18px; font-weight: 700; }
+    .badge .label { font-size: 11px; opacity: .9; }
+    .badge .val { font-size: 16px; font-weight: 700; }
 
     .btns { display:flex; gap: 8px; margin-top: 8px; }
-    button { appearance:none; border: none; border-radius: 10px; padding: 10px 12px; background: #8f7a66; color:#fff; font-weight:700; cursor:pointer; }
+    button { appearance:none; border: none; border-radius: 10px; padding: 10px 12px; background: #8f7a66; color:#fff; font-weight:700; cursor:pointer; font-size: 12px; }
     button:active { transform: translateY(1px); }
 
     .game-wrap { margin-top: 14px; }
@@ -179,7 +185,7 @@
         padding: 10px;
       }
       .top-main {
-        font-size: clamp(15px, 3.2vw, 18px);
+        font-size: clamp(13px, 3.2vw, 16px);
       }
     }
 
@@ -192,26 +198,70 @@
   </style>
 </head>
 <body>
+<!-- 细窄顶部导航 -->
+<header style="width:100%;background:#1f2937;color:#fff;
+               padding:4px 10px;
+               display:flex;justify-content:space-between;align-items:center;
+               position:sticky;top:0;z-index:999;font-size:13px;line-height:1;">
+  <!-- 标题 -->
+  <div style="font-weight:bold;">
+    2048 Global
+  </div>
+
+  <!-- 语言选择下拉（链接保持既有路径） -->
+  <nav>
+    <select aria-label="语言" onchange="goLang(this.value)"
+            style="padding:2px 6px;font-size:12px;
+                   border-radius:4px;border:none;">
+      <option value="" selected disabled>🌐 选择语言</option>
+      <option value="https://www.2048global.com">Englinsh</option>
+      <option value="/CN/index.html">中文</option>
+      <option value="/ES/index.html">Español</option>
+      <option value="/JA/index.html">日本語</option>
+      <option value="/FR/index.html">Français</option>
+      <option value="/IT/index.html">Italiano</option>
+      <option value="/NL/index.html">Nederlands</option>
+      <option value="/PT/index.html">Português</option>
+      <option value="/HI/index.html">हिन्दी</option>
+      <option value="/AR/index.html">العربية</option>
+      <option value="/BN/index.html">বাংলা</option>
+      <option value="/RU/index.html">Русский</option>
+      <option value="/ID/index.html">Bahasa Indonesia</option>
+      <option value="/VI/index.html">Tiếng Việt</option>
+      <option value="/TH/index.html">ไทย</option>
+      <option value="/MYA/index.html">မြန်မာ</option>
+    </select>
+  </nav>
+</header>
+
+<script>
+function goLang(url) {
+  if (!url) return;
+  window.location.href = url;
+}
+</script>
+
 <script type="text/javascript" src="//www.highperformanceformat.com/ec629106d819ccf2bda1ce97153afebe/invoke.js"></script>
-  <div id="app" role="application" aria-label="2048 Game">
-    <!-- ===== Top notice (plain text + blue link) ===== -->
-    <div class="top-block" aria-label="How to use">
+
+  <div id="app" role="application" aria-label="2048 游戏">
+    <!-- ===== 顶部说明 ===== -->
+    <div class="top-block" aria-label="玩法">
       <p class="top-main" style="color: #000; font-family: 'Montserrat', sans-serif;">
-  Make 2048. Use arrow keys or swipe! 
-  <a href="/sol/index.html" target="_blank" rel="noopener" style="color: #800020; text-decoration: none;">
-    $2048 Tokenomics
-  </a>
-      </p><B>Think your friends can beat it? Share it!
+        来合成 2048。使用方向键或滑动操作！
+        <a href="/sol/index.html" target="_blank" rel="noopener" style="color: #800020; text-decoration: none;">
+          $2048 代币经济学
+        </a>
+      </p><b>朋友更厉害？分享给 TA！
         <button onclick="shareSite()" style="background:none;border:none;cursor:pointer;padding:0;">
           <img src="https://cdn-icons-png.flaticon.com/512/929/929610.png"
-               alt="Share" width="16" height="16">
+               alt="分享" width="16" height="16">
         </button>
 
 <script>
 function shareSite() {
   const shareData = {
     title: '2048 Global',
-    text: 'Can anyone beat this?',
+    text: '这个，你能通关吗？',
     url: 'https://www.2048global.com'
   };
 
@@ -220,18 +270,18 @@ function shareSite() {
   } else {
     navigator.clipboard.writeText(shareData.url)
       .then(() => {
-        alert("Link copied");
+        alert("链接已复制");
       })
       .catch(err => {
-        console.error("Failed to copy link:", err);
+        console.error("复制链接失败：", err);
       });
   }
 }
 </script>
       </p>
       <p class="top-link">
-        <a href="/vpn/index.html" target="_blank" rel="noopener">
-          Want to explore the world anonymously?
+        <a href="/CN/vpn/index.html" target="_blank" rel="noopener">
+          想匿名畅游全网？
         </a>
       </p>
     </div>
@@ -239,48 +289,48 @@ function shareSite() {
     <header>
       <h1>2048</h1>
       <div class="badges" aria-hidden="true">
-        <div class="badge" id="scoreBox"><div class="label">SCORE</div><div class="val" id="score">0</div></div>
-        <div class="badge" id="bestBox"><div class="label">BEST</div><div class="val" id="best">0</div></div>
+        <div class="badge" id="scoreBox"><div class="label">得分</div><div class="val" id="score">0</div></div>
+        <div class="badge" id="bestBox"><div class="label">最佳</div><div class="val" id="best">0</div></div>
       </div>
     </header>
 
     <div class="btns">
-      <button id="newGame" aria-label="New Game">New Game</button>
-      <button id="undoBtn" aria-label="Undo">Undo</button>
+      <button id="newGame" aria-label="新游戏">新游戏</button>
+      <button id="undoBtn" aria-label="撤销">撤销</button>
     </div>
 
-    <!-- ===== Game area (no code changes) ===== -->
+    <!-- ===== 游戏区域 ===== -->
     <div class="game-wrap">
-      <div class="board" id="board" tabindex="0" aria-label="Game board 4x4" aria-live="polite"></div>
+      <div class="board" id="board" tabindex="0" aria-label="4x4 棋盘" aria-live="polite"></div>
       <div class="overlay" id="overlay" role="dialog" aria-modal="true">
         <div>
-          <h2 id="ovTitle">Game Over</h2>
-          <p id="ovMsg">Try again?</p>
-          <button id="retry">Restart</button>
+          <h2 id="ovTitle">游戏结束</h2>
+          <p id="ovMsg">要不要再来一局？</p>
+          <button id="retry">重新开始</button>
         </div>
       </div>
     </div>
 
-    <!-- 1,000 $ event notice -->
+    <!-- 1,000 $ 活动（$ 不变） -->
     <div class="event-box">
       <strong>
-        <a href="/viral/index.html" target="_blank" style="text-decoration:none; color:inherit;" rel="noopener">
-          <br> Share this game and get <span class="highlight">1,000$</span> every month?!
+        <a href="/CN/viral/index.html" target="_blank" style="text-decoration:none; color:inherit;" rel="noopener">
+          <br> 分享此游戏，每月有机会赢取 <span class="highlight">1,000$</span>?!
         </a>
       </strong>
     </div>
 
-    <!-- ===== Blue link under the game ===== -->
+    <!-- ===== 底部蓝色链接 ===== -->
     <p class="below-cta">
       <a href="https://partner.bitget.com/bg/J6RM1E" target="_blank" rel="noopener">
-        Get Rich with Leverage Coin Trading.
+        用合约杠杆扩大你的资产。
       </a>
     </p>
 
     <p class="sr-only" id="status" aria-live="assertive"></p>
   </div>
 
-  <!-- ===== Game script: original logic unchanged (only text localized) ===== -->
+  <!-- ===== Game script: 仅文本本地化，功能保持不变 ===== -->
   <script>
   (function(){
     const SIZE = 4;
@@ -418,7 +468,7 @@ function shareSite() {
         updateScore(gained);
         addRandomTile();
         render();
-        if (!canMove()) showOverlay('Game Over', 'No more moves available.');
+        if (!canMove()) showOverlay('游戏结束', '已经无法继续移动了。');
       }
       announce(dir, moved, gained);
     }
@@ -433,8 +483,8 @@ function shareSite() {
     }
 
     function announce(dir, moved, gained){
-      const names = {left:'Left', right:'Right', up:'Up', down:'Down'};
-      statusEl.textContent = moved ? `${names[dir]} move, +${gained} pts` : `No move`;
+      const names = {left:'左', right:'右', up:'上', down:'下'};
+      statusEl.textContent = moved ? `向${names[dir]} 移动，+${gained} 分` : `无法移动`;
     }
 
     function hideOverlay(){ overlay.classList.remove('show'); }
