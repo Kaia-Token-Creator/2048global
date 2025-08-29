@@ -112,16 +112,5 @@ Invite your friends and Spread this game across the globe!!!<br><br>
     <a class="play" href="https://2048global.com/">PLAY</a>
   </div>
 </body>
-<footer>
-<script type="text/javascript">
-	atOptions = {
-		'key' : 'ec629106d819ccf2bda1ce97153afebe',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/ec629106d819ccf2bda1ce97153afebe/invoke.js"></script>
 </footer>
 </html>
