@@ -1,7 +1,6 @@
-<!DOCTYPE html> 
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-<meta name="naver-site-verification" content="907309a9759c57d67cd81f19709282c0a72d3211" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9891583086388017"
      crossorigin="anonymous"></script>
 <!-- Google tag (gtag.js) -->
@@ -11,30 +10,31 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-F00NF909N7');
+  gtag('config', 'G-20YHHF4D48');
 </script>
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>2048 Global Web version game</title>
-<meta name="description" content="Can you beat it? 2048 Global web version game">
+  <title>2048 Korea</title>
+<meta name="description" content="2048 Korea! 과연 니가 깰 수 있을까?">
 
-<!-- Open Graph -->
+<!-- Open Graph (KakaoTalk 등) -->
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="2048 Global game">
-<meta property="og:title" content="2048 Global game! Can you beat it?">
-<meta property="og:description" content="2048 Global game! Can you beat it?">
-<meta property="og:url" content="https://www.2048global.com">
-<meta property="og:image" content="https://2048global.com/og-image.jpg">
+<meta property="og:site_name" content="2048 Korea">
+<meta property="og:title" content="2048 Korea! 과연 니가 깰 수 있을까?">
+<meta property="og:description" content="2048 Korea! 과연 니가 깰 수 있을까?">
+<meta property="og:url" content="https://2048global.com/KR">
+<meta property="og:image" content="https://2048global.com/KR/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
-<!-- X(Twitter) Card -->
+<!-- X(Twitter) 카드 -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="2048 Global game! Can you beat it?">
-<meta name="twitter:description" content="2048 Global game! Can you beat it?">
-<meta name="twitter:image" content="2048global.com/og-image.jpg">
+<meta name="twitter:title" content="2048 Korea! 과연 니가 깰 수 있을까?">
+<meta name="twitter:description" content="2048 Korea! 과연 니가 깰 수 있을까?">
+<meta name="twitter:image" content="https://2048global.com/KR/og-image.png">
 
-<!-- Favicon / App Icon -->
+<!-- 파비콘/앱 아이콘 -->
 <link rel="icon" href="/favicon.ico">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#faf8ef">
@@ -43,11 +43,11 @@
       --bg: #faf8ef;
       --board: #bbada0;
       --tile-empty: #cdc1b4;
-      --text: #2b2b2b; /* darker for readability */
+      --text: #2b2b2b; /* 상단 안내 가독성 위해 살짝 진한 검정 */
       --accent: #8f7a66;
       --tile-2: #eee4da; --tile-4: #ede0c8; --tile-8: #f2b179; --tile-16: #f59563; --tile-32: #f67c5f; --tile-64: #f65e3b;
       --tile-128: #edcf72; --tile-256: #edcc61; --tile-512: #edc850; --tile-1024: #edc53f; --tile-2048: #edc22e;
-      --blue: #2563eb; /* link color */
+      --blue: #2563eb; /* 파란색 링크 */
     }
     html, body {
       height: 100%;
@@ -65,7 +65,7 @@
 
     #app { max-width: 520px; margin: 0 auto; padding: 16px; }
 
-    /* ===== Top/Bottom notices ===== */
+    /* ===== 상단/하단 안내 ===== */
     .top-block {
       margin: 8px 0 14px;
       line-height: 1.5;
@@ -73,27 +73,27 @@
     .top-main {
       margin: 0 0 6px;
       font-weight: 700;
-      color: #000; /* black */
-      font-size: clamp(13px, 3.2vw, 14px);
+      color: #000; /* 검정 */
+      font-size: clamp(16px, 3.8vw, 20px);
       letter-spacing: 0.1px;
     }
     .top-link {
       margin: 0;
-      font-size: clamp(13px, 3.2vw, 14px);
+      font-size: clamp(13px, 3.2vw, 14px); /* 더 작은 글씨 */
     }
     .top-link a {
-      color: var(--blue);
+      color: var(--blue); /* 파란색 */
       text-decoration: none;
     }
     .top-link a:hover { text-decoration: underline; }
 
     .below-cta {
-      margin: 18px 0 6px;
+      margin: 18px 0 6px; /* 게임 아래 조금 띄우기 */
       text-align: left;
       font-size: clamp(13px, 3.2vw, 14px);
     }
     .below-cta a {
-      color: var(--blue);
+      color: var(--blue); /* 파란색 */
       text-decoration: none;
       font-weight: 600;
     }
@@ -167,30 +167,37 @@
 
     .sr-only { position:absolute; left:-9999px; }
 
-    /* === Tablet-specific tweaks === */
-    @media (min-width: 600px) and (max-width: 1024px) {
-      body, #app {
-        touch-action: auto;
-        overscroll-behavior: auto;
-      }
-      #app {
-        max-width: 420px;
-        padding: 12px;
-      }
-      .board {
-        gap: 10px;
-        padding: 10px;
-      }
-      .top-main {
-        font-size: clamp(15px, 3.2vw, 18px);
-      }
-    }
+/* === Tablet 전용 조정: 게임판 작게 + 페이지 스크롤 가능 === */
+@media (min-width: 600px) and (max-width: 1024px) {
+  /* 태블릿에서는 페이지 스크롤을 막지 않음 */
+  body, #app {
+    touch-action: auto;
+    overscroll-behavior: auto;
+  }
 
-    /* === Low-height tablet (landscape) === */
-    @media (max-height: 720px) and (orientation: landscape) {
-      #app { max-width: 380px; }
-      .board { gap: 8px; padding: 8px; }
-    }
+  /* 앱 너비를 조금 줄여서 정사각 보드도 함께 작아지도록 */
+  #app {
+    max-width: 420px;  /* 기존 520px → 420px */
+    padding: 12px;
+  }
+
+  /* 타일 간격/패딩도 약간 줄여서 전체 높이 축소 */
+  .board {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  /* 상단 안내 글씨 살짝 축소 (줄바꿈 방지용) */
+  .top-main {
+    font-size: clamp(15px, 3.2vw, 18px);
+  }
+}
+
+/* === 화면이 낮은 태블릿(가로방향 등)에서 보드가 화면을 넘어가면 더 줄이기 === */
+@media (max-height: 720px) and (orientation: landscape) {
+  #app { max-width: 380px; }
+  .board { gap: 8px; padding: 8px; }
+}
 
   </style>
 </head>
@@ -207,14 +214,14 @@
 
   <!-- 언어 선택 드롭다운 -->
   <nav>
-    <select aria-label="Language" onchange="goLang(this.value)"
+    <select aria-label="언어선택" onchange="goLang(this.value)"
             style="padding:2px 6px;font-size:12px;
                    border-radius:4px;border:none;">
       <option value="" selected disabled>🌐 Language</option>
       <option value="https://www.2048global.com">Englinsh</option>
       <option value="/CN/index.html">中文</option>
       <option value="/ES/index.html">Español</option>
-      <option value="/KR/index.html">한국어</option>
+        <option value="/KR/index.html">한국어</option>
       <option value="/JA/index.html">日本語</option>
       <option value="/FR/index.html">Français</option>
       <option value="/IT/index.html">Italiano</option>
@@ -232,34 +239,21 @@
   </nav>
 </header>
 
-<script>
-function goLang(url) {
-  if (!url) return;
-  window.location.href = url;
-}
-</script>
-
-<script type="text/javascript" src="//www.highperformanceformat.com/ec629106d819ccf2bda1ce97153afebe/invoke.js"></script>
   <div id="app" role="application" aria-label="2048 Game">
-    <!-- ===== Top notice (plain text + blue link) ===== -->
-    <div class="top-block" aria-label="How to use">
-      <p class="top-main" style="color: #000; font-family: 'Montserrat', sans-serif;">
-  Make 2048. Use arrow keys or swipe! 
-  <a href="/sol/index.html" target="_blank" rel="noopener" style="color: #800020; text-decoration: none;">
-    $2048 Tokenomics
-  </a>
-      </p><B>Think your friends can beat it? Share it!
-        <button onclick="shareSite()" style="background:none;border:none;cursor:pointer;padding:0;">
-          <img src="https://cdn-icons-png.flaticon.com/512/929/929610.png"
-               alt="Share" width="16" height="16">
-        </button>
+    <!-- ===== 최상단 안내 (링크 없는 검정 문구 + 파란 링크) ===== -->
+    <div class="top-block" aria-label="사용 안내">
+      <p class="top-main">
+        2048을 만들어보세요. 방향키 or 스와이프!<br>과연 내친구는 깰 수 있을까 공유해보세요 <button onclick="shareSite()" style="background:none;border:none;cursor:pointer;padding:0;">
+  <img src="https://cdn-icons-png.flaticon.com/512/929/929610.png"
+       alt="공유하기" width="16" height="16">
+</button>
 
 <script>
 function shareSite() {
   const shareData = {
-    title: '2048 Global',
-    text: 'Can anyone beat this?',
-    url: 'https://www.2048global.com'
+    title: '2048 Korea',
+    text: '이거 깰 수 있는 분?',
+    url: 'https://www.2048korea.com'
   };
 
   if (navigator.share) {
@@ -267,10 +261,10 @@ function shareSite() {
   } else {
     navigator.clipboard.writeText(shareData.url)
       .then(() => {
-        alert("Link copied");
+        alert("복사되었습니다");
       })
       .catch(err => {
-        console.error("Failed to copy link:", err);
+        console.error("링크 복사 실패:", err);
       });
   }
 }
@@ -278,7 +272,7 @@ function shareSite() {
       </p>
       <p class="top-link">
         <a href="/vpn/index.html" target="_blank" rel="noopener">
-          Want to explore the world anonymously?
+          혹시? 익명으로 전 세계를 탐험하고 싶나요?
         </a>
       </p>
     </div>
@@ -292,41 +286,44 @@ function shareSite() {
     </header>
 
     <div class="btns">
-      <button id="newGame" aria-label="New Game">New Game</button>
-      <button id="undoBtn" aria-label="Undo">Undo</button>
+      <button id="newGame" aria-label="새 게임">새 게임</button>
+      <button id="undoBtn" aria-label="되돌리기">되돌리기</button>
     </div>
 
-    <!-- ===== Game area (no code changes) ===== -->
+    <!-- ===== 게임 영역 (코드 수정 없음) ===== -->
     <div class="game-wrap">
-      <div class="board" id="board" tabindex="0" aria-label="Game board 4x4" aria-live="polite"></div>
+      <div class="board" id="board" tabindex="0" aria-label="게임 보드 4x4" aria-live="polite"></div>
       <div class="overlay" id="overlay" role="dialog" aria-modal="true">
         <div>
-          <h2 id="ovTitle">Game Over</h2>
-          <p id="ovMsg">Try again?</p>
-          <button id="retry">Restart</button>
+          <h2 id="ovTitle">게임 종료</h2>
+          <p id="ovMsg">다시 도전해볼까요?</p>
+          <button id="retry">다시 시작</button>
         </div>
       </div>
     </div>
+<!-- 100만원 이벤트 안내 -->
+<div class="event-box">
+  <strong>
+    <a href="/viral/index.html" target="_blank" style="text-decoration:none; color:inherit;" rel="noopener">
+      <br> 이 게임 공유하면 매달 <span class="highlight">100만원</span>을 준다고?!
+    </a>
+  </strong>
+</div>
 
-    <!-- 1,000 $ event notice -->
-    <div class="event-box">
-      <strong>
-        <a href="/viral/index.html" target="_blank" style="text-decoration:none; color:inherit;" rel="noopener">
-          <br> Share this game and get <span class="highlight">1,000$</span> every month?!
-        </a>
-      </strong>
-    </div>
-
-    <!-- ===== Blue link under the game ===== -->
+    <!-- ===== 게임 아래 파란 링크 ===== -->
     <p class="below-cta">
-      <a href="https://partner.bitget.com/bg/J6RM1E" target="_blank" rel="noopener">
-        Get Rich with Leverage Coin Trading.
+      <a href="/exchange/index.html" target="_blank" rel="noopener">
+        설마 아직도? 국내거래소 쓰고 계신가요?
       </a>
-    </p>
+<a href="https://2048global.com/KR/date/index.html" target="_blank" rel="noopener noreferrer" 
+   style="color:#AD1457; font-weight:700; text-decoration:none; font-size:20px;">
+  혹시..솔로인가요?
+</a>
 
     <p class="sr-only" id="status" aria-live="assertive"></p>
   </div>
-  <!-- ===== Game script: original logic unchanged (only text localized) ===== -->
+
+  <!-- ===== 게임 스크립트: 원본 그대로 (수정 없음) ===== -->
   <script>
   (function(){
     const SIZE = 4;
@@ -464,7 +461,7 @@ function shareSite() {
         updateScore(gained);
         addRandomTile();
         render();
-        if (!canMove()) showOverlay('Game Over', 'No more moves available.');
+        if (!canMove()) showOverlay('게임 종료', '더 이상 이동할 수 없습니다.');
       }
       announce(dir, moved, gained);
     }
@@ -479,8 +476,8 @@ function shareSite() {
     }
 
     function announce(dir, moved, gained){
-      const names = {left:'Left', right:'Right', up:'Up', down:'Down'};
-      statusEl.textContent = moved ? `${names[dir]} move, +${gained} pts` : `No move`;
+      const names = {left:'왼쪽', right:'오른쪽', up:'위', down:'아래'};
+      statusEl.textContent = moved ? `${names[dir]}으로 이동, +${gained}점` : `이동 없음`;
     }
 
     function hideOverlay(){ overlay.classList.remove('show'); }
@@ -552,5 +549,7 @@ function shareSite() {
     start(true);
   })();
   </script>
+
+
 </body>
 </html>
