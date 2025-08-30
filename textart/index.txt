@@ -305,7 +305,7 @@ function renderASCII(){
   }
 
   // === 워터마크: 마지막 줄 맨왼쪽 ===
-  const domain="2048global.com/textart";
+  const domain="www.2048global.com/textart";
   if(lines.length){
     const last=lines[lines.length-1];
     const cols=last.length;
