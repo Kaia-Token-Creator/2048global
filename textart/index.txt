@@ -10,7 +10,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-F00NF909N7');
 </script>
 <meta charset="utf-8">
@@ -26,7 +25,7 @@
 <meta property="og:title" content="Text Art Generator - 2048global.com/textart">
 <meta property="og:description" content="Convert images into text art.">
 <meta property="og:site_name" content="2048global.com/textart">
-<meta property="og:image" content="https://textartkorea.com/preview.jpg">
+<meta property="og:image" content="2048global.com/textart/preview.jpg">
 <meta property="og:url" content="https://2048global.com/textart">
 
 <style>
@@ -47,11 +46,21 @@
   @media(min-width:960px){.grid{grid-template-columns:360px 1fr}}
 
   .drop{
+    position:relative; /* ⬅️ 오버레이 input을 위해 추가 */
     border:2px dashed #334155;border-radius:12px;padding:18px;text-align:center;
     background:#0f172a55; cursor:pointer; user-select:none
   }
   .drop:hover{border-color:var(--accent)}
   .drop strong.underline{ text-decoration: underline; }
+
+  /* ⬇️ 모바일용 투명 오버레이 input (PC에서는 숨김) */
+  .file-overlay{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    opacity:0; cursor:pointer;
+    margin:0; padding:0; border:0;
+    display:none; /* 기본은 PC에서 숨김 */
+  }
 
   .hint{color:var(--muted);font-size:12px}
   .notice{margin-top:10px;padding:10px;border:1px dashed #2b3b55;border-radius:10px;background:#0f172a88}
@@ -99,13 +108,17 @@
       <button id="shareSite" class="iconbtn">📤 Share with Friends</button>
     </div>
   </header>
+
   <div class="grid">
     <div class="panel">
-      <input id="file" type="file" accept="image/*" style="display:none">
+      <!-- ⛔️ 기존: 숨김 input (삭제) -->
+      <!-- <input id="file" type="file" accept="image/*" style="display:none"> -->
 
+      <!-- ✅ 드롭존 + 모바일용 투명 오버레이 input -->
       <div class="drop" id="drop" role="button" tabindex="0" aria-label="Drop or tap to upload an image">
         <div><strong>Drop image</strong> or <strong class="underline">Tap here to upload</strong></div>
         <div class="hint">You can also paste from clipboard</div>
+        <input id="file" type="file" accept="image/*" class="file-overlay"><!-- 모바일에서만 표시 -->
       </div>
 
       <div class="notice">💡 <strong>Save as image for best results.</strong> In messengers like KakaoTalk, fonts may not align. Under 50 columns is recommended on mobile.</div>
@@ -162,11 +175,79 @@
 
 <canvas id="canvas" style="display:none"></canvas>
 
-<!-- (JS 부분은 그대로 두었습니다, 텍스트는 알림창/버튼만 영어로 변경됨) -->
+<!-- ===== Upload behavior (desktop: drop+click, mobile: tap) ===== -->
+<script>
+(function(){
+  const drop = document.getElementById('drop');
+  const fileInput = document.getElementById('file');
+  const preview = document.getElementById('preview');
+
+  // 터치 디바이스 감지
+  const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+
+  // 모바일(터치)에서는 투명 오버레이 input 표시 → 탭하면 네이티브 파일 선택
+  // PC에서는 숨기고, 드래그&드롭 + 클릭으로 파일창 열리게 처리
+  if (isTouch) {
+    fileInput.style.display = 'block';
+  } else {
+    fileInput.style.display = 'none';
+    // PC: 클릭/키보드로 파일창
+    drop.addEventListener('click', () => fileInput.click());
+    drop.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fileInput.click(); }
+    });
+  }
+
+  // 파일 선택 시
+  fileInput.addEventListener('change', (e) => {
+    const f = e.target.files && e.target.files[0];
+    if (f) safeReadFile(f);
+  });
+
+  // Drag & Drop (주로 PC)
+  ['dragenter','dragover'].forEach(ev =>
+    drop.addEventListener(ev, e => { e.preventDefault(); e.stopPropagation(); })
+  );
+  drop.addEventListener('drop', e => {
+    e.preventDefault(); e.stopPropagation();
+    const f = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+    if (f) safeReadFile(f);
+  });
+
+  // Paste from clipboard (지원 브라우저)
+  window.addEventListener('paste', e => {
+    const items = e.clipboardData && e.clipboardData.items;
+    if (!items) return;
+    for (const it of items) {
+      if (it.type && it.type.startsWith('image/')) {
+        const f = it.getAsFile();
+        if (f) { safeReadFile(f); break; }
+      }
+    }
+  });
+
+  // 사용자가 기존에 정의한 readFile()이 있으면 그대로 사용
+  // 없으면 미니 fallback(미리보기만) 제공 → 다른 기능은 그대로 유지됨
+  function safeReadFile(file){
+    if (typeof window.readFile === 'function') {
+      window.readFile(file);
+      return;
+    }
+    // Minimal fallback: preview only
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => {
+      preview.innerHTML = `<img src="${url}" style="max-width:100%;border-radius:8px;border:1px solid #1e293b">`;
+      // 버튼 활성화 등은 기존 스크립트가 처리하도록 둠
+    };
+    img.onerror = () => alert('Failed to load image.');
+    img.src = url;
+  }
+})();
+</script>
 
 <a href="https://2048global.com" style="color:white;" target="_blank" rel="noopener noreferrer">
   2048global Home
 </a>
-
 </body>
 </html>
