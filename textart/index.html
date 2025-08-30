@@ -110,7 +110,7 @@
     <!-- 좌측: 컨트롤 -->
     <div class="panel">
       <!-- 숨김 파일 입력 -->
-      <input id="file" type="file" accept="image/*" style="display:none">
+      <input id="file" type="file" accept="image/*" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;opacity:0;overflow:hidden;">
 
       <!-- 업로드 영역 (더블 선택 방지: label 제거, div 클릭/키보드로만 트리거) -->
       <div class="drop" id="drop" role="button" tabindex="0" aria-label="Drop an image or tap here to upload">
@@ -246,7 +246,7 @@ function readFile(file){
   image.onerror=()=>alert('이미지를 불러오지 못했습니다.');
   image.src=url;
 }
-drop.addEventListener('click',()=> fileInput.click());
+drop.addEventListener('click',(e)=>{ e.preventDefault(); fileInput.click(); });
 drop.addEventListener('keydown',(e)=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); fileInput.click(); }});
 fileInput.addEventListener('change',e=> readFile(e.target.files?.[0]));
 ['dragenter','dragover'].forEach(ev=> drop.addEventListener(ev,e=>{e.preventDefault(); e.stopPropagation();}));
@@ -255,6 +255,10 @@ window.addEventListener('paste',e=>{
   const items=e.clipboardData?.items; if(!items) return;
   for(const it of items){ if(it.type.startsWith('image/')){ readFile(it.getAsFile()); break; } }
 });
+
+// (전역) 브라우저 기본 드롭 동작(파일 열기/탭 이동) 방지
+['dragenter','dragover','dragleave','drop'].forEach(ev=>{ window.addEventListener(ev, e => { e.preventDefault(); }, { passive:false }); });
+
 
 // ===== UI 표시값 =====
 widthRange.addEventListener('input',()=> wVal.textContent = widthRange.value);
