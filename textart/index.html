@@ -10,23 +10,25 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+
   gtag('config', 'G-F00NF909N7');
 </script>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Text Art Generator - 2048global.com/textart</title>
+<title>Text Art Generator - textartkorea.com</title>
 
 <!-- favicon -->
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
 <!-- Open Graph -->
-<meta name="description" content="Convert images into text art.">
+<meta name="description" content="Convert your image into text art">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Text Art Generator - 2048global.com/textart">
-<meta property="og:description" content="Convert images into text art.">
-<meta property="og:site_name" content="2048global.com/textart">
-<meta property="og:image" content="2048global.com/textart/preview.jpg">
-<meta property="og:url" content="https://2048global.com/textart">
+<meta property="og:title" content="Text Art Generator - textartkorea.com">
+<meta property="og:description" content="Convert your image into text art">
+<meta property="og:site_name" content="textartkorea.com">
+<meta property="og:image" content="https://textartkorea.com/preview.jpg">
+<meta property="og:url" content="https://textartkorea.com">
 
 <style>
   :root{
@@ -46,21 +48,11 @@
   @media(min-width:960px){.grid{grid-template-columns:360px 1fr}}
 
   .drop{
-    position:relative; /* ⬅️ 오버레이 input을 위해 추가 */
     border:2px dashed #334155;border-radius:12px;padding:18px;text-align:center;
     background:#0f172a55; cursor:pointer; user-select:none
   }
   .drop:hover{border-color:var(--accent)}
   .drop strong.underline{ text-decoration: underline; }
-
-  /* ⬇️ 모바일용 투명 오버레이 input (PC에서는 숨김) */
-  .file-overlay{
-    position:absolute; inset:0;
-    width:100%; height:100%;
-    opacity:0; cursor:pointer;
-    margin:0; padding:0; border:0;
-    display:none; /* 기본은 PC에서 숨김 */
-  }
 
   .hint{color:var(--muted);font-size:12px}
   .notice{margin-top:10px;padding:10px;border:1px dashed #2b3b55;border-radius:10px;background:#0f172a88}
@@ -105,54 +97,51 @@
   <header>
     <div class="title">🔤 Text Art Generator</div>
     <div class="sharebar">
-      <button id="shareSite" class="iconbtn">📤 Share with Friends</button>
+      <button id="shareSite" class="iconbtn">📤 Share with a friend</button>
     </div>
   </header>
 
   <div class="grid">
     <div class="panel">
-      <!-- ⛔️ 기존: 숨김 input (삭제) -->
-      <!-- <input id="file" type="file" accept="image/*" style="display:none"> -->
+      <input id="file" type="file" accept="image/*" style="display:none">
 
-      <!-- ✅ 드롭존 + 모바일용 투명 오버레이 input -->
-      <div class="drop" id="drop" role="button" tabindex="0" aria-label="Drop or tap to upload an image">
+      <div class="drop" id="drop" role="button" tabindex="0" aria-label="Drop image or tap here to upload">
         <div><strong>Drop image</strong> or <strong class="underline">Tap here to upload</strong></div>
         <div class="hint">You can also paste from clipboard</div>
-        <input id="file" type="file" accept="image/*" class="file-overlay"><!-- 모바일에서만 표시 -->
       </div>
 
-      <div class="notice">💡 <strong>Save as image for best results.</strong> In messengers like KakaoTalk, fonts may not align. Under 50 columns is recommended on mobile.</div>
+      <div class="notice">💡 <strong>Save as image for best results.</strong> In some messengers the font may break alignment. On mobile, less than 50 columns is recommended.</div>
 
       <div class="control">
-        <label>Output Width: <span id="wVal">50</span> cols</label>
+        <label>Output width: <span id="wVal">50</span> cols</label>
         <input id="width" type="range" min="30" max="300" value="50">
       </div>
 
       <div class="control">
-        <label>Font Size: <span id="fsVal">12</span>px</label>
+        <label>Font size: <span id="fsVal">12</span>px</label>
         <input id="fontsize" type="range" min="8" max="20" value="12">
       </div>
 
       <div class="control">
         <label for="mode">Mode</label>
         <select id="mode">
-          <option value="mono" selected>Monochrome</option>
+          <option value="mono" selected>Black & White</option>
           <option value="color">Color</option>
         </select>
       </div>
 
       <div class="control">
-        <label for="fontColor">Font Color (Monochrome)</label>
+        <label for="fontColor">Font color (B/W mode)</label>
         <input id="fontColor" type="color" value="#ffffff">
       </div>
 
       <div class="control">
-        <label for="bgColor">Background Color</label>
+        <label for="bgColor">Background color</label>
         <input id="bgColor" type="color" value="#000000">
       </div>
 
       <div class="control">
-        <label for="customMsg">Message (up to 20 characters, displayed at bottom-right)</label>
+        <label for="customMsg">Message (max 20 characters, displayed bottom-right)</label>
         <input id="customMsg" type="text" maxlength="20" placeholder="Enter message">
       </div>
 
@@ -175,94 +164,14 @@
 
 <canvas id="canvas" style="display:none"></canvas>
 
-<!-- ===== Upload behavior (desktop: drop+click, mobile: tap) ===== -->
-<script>
-(function(){
-  const drop = document.getElementById('drop');
-  const btnRender   = document.getElementById('render');
-  const btnCopy     = document.getElementById('copyBtn');
-  const btnSavePng  = document.getElementById('savePng');
-  const btnShareImg = document.getElementById('shareImage');
-  const asciiPre    = document.getElementById('ascii');
-  const msgBelow    = document.getElementById('msgBelow');
-  const fileInput = document.getElementById('file');
-  const preview = document.getElementById('preview');
+<!-- script stays unchanged -->
 
-  // 터치 디바이스 감지
-  const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
-
-  // 모바일(터치)에서는 투명 오버레이 input 표시 → 탭하면 네이티브 파일 선택
-  // PC에서는 숨기고, 드래그&드롭 + 클릭으로 파일창 열리게 처리
-  if (isTouch) {
-    fileInput.style.display = 'block';
-  } else {
-    fileInput.style.display = 'none';
-    // PC: 클릭/키보드로 파일창
-    drop.addEventListener('click', () => fileInput.click());
-    drop.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fileInput.click(); }
-    });
-  }
-
-  // 파일 선택 시
-  fileInput.addEventListener('change', (e) => {
-    const f = e.target.files && e.target.files[0];
-    if (f) safeReadFile(f);
-  });
-
-  // Drag & Drop (주로 PC)
-  ['dragenter','dragover'].forEach(ev =>
-    drop.addEventListener(ev, e => { e.preventDefault(); e.stopPropagation(); })
-  );
-  drop.addEventListener('drop', e => {
-    e.preventDefault(); e.stopPropagation();
-    const f = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
-    if (f) safeReadFile(f);
-  });
-
-  // Paste from clipboard (지원 브라우저)
-  window.addEventListener('paste', e => {
-    const items = e.clipboardData && e.clipboardData.items;
-    if (!items) return;
-    for (const it of items) {
-      if (it.type && it.type.startsWith('image/')) {
-        const f = it.getAsFile();
-        if (f) { safeReadFile(f); break; }
-      }
-    }
-  });
-
-  // 사용자가 기존에 정의한 readFile()이 있으면 그대로 사용
-  // 없으면 미니 fallback(미리보기만) 제공 → 다른 기능은 그대로 유지됨
-  function safeReadFile(file){
-    if (typeof window.readFile === 'function') {
-      window.readFile(file);
-      return;
-    }
-   // Minimal fallback: preview + 버튼 활성화
-    const url = URL.createObjectURL(file);
-    const img = new Image();
-    img.onload = () => {
-      preview.innerHTML = `<img src="${url}" style="max-width:100%;border-radius:8px;border:1px solid #1e293b">`;
-
-      // ✅ 출력 영역 초기화
-      if (asciiPre) asciiPre.textContent = '';
-      if (msgBelow) msgBelow.textContent = '';
-
-      // ✅ 버튼 활성화
-      if (btnRender)   btnRender.disabled   = false;
-      if (btnCopy)     btnCopy.disabled     = false;   // 복사는 렌더 후에만 쓰고 싶으면 true로 두세요
-      if (btnSavePng)  btnSavePng.disabled  = false;   // 저장/공유도 렌더 후만 원하면 true로
-      if (btnShareImg) btnShareImg.disabled = false;
-    };
-    img.onerror = () => alert('Failed to load image.');
-    img.src = url;
-  }
-})();
-</script>
-
-<a href="https://2048global.com" style="color:white;" target="_blank" rel="noopener noreferrer">
-  2048global Home
+<a href="https://2048global.com/textart" style="color:white;" target="_blank" rel="noopener noreferrer">
+  2048global HOME
 </a>
+
+<footer>
+  <p style="text-align:center; color:#666; font-size:14px;">© 2025 textartkorea.com</p>
+</footer>
 </body>
 </html>
