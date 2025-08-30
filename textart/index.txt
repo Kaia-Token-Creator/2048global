@@ -442,7 +442,7 @@ btnCopy.addEventListener('click',async()=>{
 
 btnSavePng.addEventListener('click',async()=>{
   const blob=await buildImageBlob();
-  if(!blob){ alert('Click 'Generate' first to generate the output.'); return; }
+  if(!blob){ alert("Click 'Generate' first to generate the output."); return; }
   const a=document.createElement('a');
   a.href=URL.createObjectURL(blob);
   a.download='text-art.png';
@@ -451,7 +451,7 @@ btnSavePng.addEventListener('click',async()=>{
 
 btnShareImage.addEventListener('click',async()=>{
   const blob=await buildImageBlob();
-  if(!blob){ alert('Click 'Generate' first to generate the output.'); return; }
+  if(!blob){ alert("Click 'Generate' first to generate the output."); return; }
   const file=new File([blob],'text-art.png',{type:'image/png'});
   if(navigator.canShare && navigator.canShare({files:[file]})){
     try{ await navigator.share({files:[file], title:'Text Art', text:'Share your Text Art'}); }
