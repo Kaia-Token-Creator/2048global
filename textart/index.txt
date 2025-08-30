@@ -179,6 +179,12 @@
 <script>
 (function(){
   const drop = document.getElementById('drop');
+  const btnRender   = document.getElementById('render');
+  const btnCopy     = document.getElementById('copyBtn');
+  const btnSavePng  = document.getElementById('savePng');
+  const btnShareImg = document.getElementById('shareImage');
+  const asciiPre    = document.getElementById('ascii');
+  const msgBelow    = document.getElementById('msgBelow');
   const fileInput = document.getElementById('file');
   const preview = document.getElementById('preview');
 
@@ -233,12 +239,21 @@
       window.readFile(file);
       return;
     }
-    // Minimal fallback: preview only
+   // Minimal fallback: preview + 버튼 활성화
     const url = URL.createObjectURL(file);
     const img = new Image();
     img.onload = () => {
       preview.innerHTML = `<img src="${url}" style="max-width:100%;border-radius:8px;border:1px solid #1e293b">`;
-      // 버튼 활성화 등은 기존 스크립트가 처리하도록 둠
+
+      // ✅ 출력 영역 초기화
+      if (asciiPre) asciiPre.textContent = '';
+      if (msgBelow) msgBelow.textContent = '';
+
+      // ✅ 버튼 활성화
+      if (btnRender)   btnRender.disabled   = false;
+      if (btnCopy)     btnCopy.disabled     = false;   // 복사는 렌더 후에만 쓰고 싶으면 true로 두세요
+      if (btnSavePng)  btnSavePng.disabled  = false;   // 저장/공유도 렌더 후만 원하면 true로
+      if (btnShareImg) btnShareImg.disabled = false;
     };
     img.onerror = () => alert('Failed to load image.');
     img.src = url;
