@@ -1,571 +1,562 @@
-<!-- /demo/index.html (입력창은 항상 푸터 위, 모달 화면 초과 시 스크롤 가능) -->
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LFMWVGLLZD"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-LFMWVGLLZD');
-  </script>
+<meta name="naver-site-verification" content="907309a9759c57d67cd81f19709282c0a72d3211" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9891583086388017"
+     crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F00NF909N7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-F00NF909N7');
+</script>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <title>Chat with Scarlett Voss</title>
-  <meta name="description" content="Chat with Scarlett Voss — playful, flirty conversation. Tip to unlock unlimited chat and the secret gallery." />
-  <link rel="canonical" href="https://scarlett-voss.com/" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="theme-color" content="#000000" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>2048 Global Web version game</title>
+<meta name="description" content="Can you beat it? 2048 Global web version game">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Chat with Scarlett Voss" />
-  <meta property="og:description" content="Playful, flirty conversation. Tip to unlock unlimited chat and the secret gallery." />
-  <meta property="og:url" content="https://scarlett-voss.com/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://scarlett-voss.com/voss.jpg" />
-  <meta property="og:image:alt" content="Scarlett Voss profile" />
-  <meta property="og:site_name" content="Chat with Scarlett Voss" />
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="2048 Global game">
+<meta property="og:title" content="2048 Global game! Can you beat it?">
+<meta property="og:description" content="2048 Global game! Can you beat it?">
+<meta property="og:url" content="https://www.2048global.com">
+<meta property="og:image" content="https://2048global.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Chat with Scarlett Voss" />
-  <meta name="twitter:description" content="Flirty conversation. Tip to unlock unlimited chat and the secret gallery." />
-  <meta name="twitter:image" content="https://scarlett-voss.com/voss.jpg" />
+<!-- X(Twitter) Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="2048 Global game! Can you beat it?">
+<meta name="twitter:description" content="2048 Global game! Can you beat it?">
+<meta name="twitter:image" content="2048global.com/og-image.jpg">
 
-  <!-- Favicons -->
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-
+<!-- Favicon / App Icon -->
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#faf8ef">
   <style>
-    :root{
-      --bg:#000000;
-      --hotpink:#ff1493;
-      --text:#ff1493;
-      /* ▼ 입력창(컴포저) 고정 높이 */
-      --composerH: 58px;
-      /* ▼ JS가 푸터 실제 높이로 업데이트 */
-      --footerH: 0px;
+    :root {
+      --bg: #faf8ef;
+      --board: #bbada0;
+      --tile-empty: #cdc1b4;
+      --text: #2b2b2b; /* darker for readability */
+      --accent: #8f7a66;
+      --tile-2: #eee4da; --tile-4: #ede0c8; --tile-8: #f2b179; --tile-16: #f59563; --tile-32: #f67c5f; --tile-64: #f65e3b;
+      --tile-128: #edcf72; --tile-256: #edcc61; --tile-512: #edc850; --tile-1024: #edc53f; --tile-2048: #edc22e;
+      --blue: #2563eb; /* link color */
     }
-    *{box-sizing:border-box}
-    body{
-      margin:0; background:var(--bg); color:var(--text);
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple SD Gothic Neo", "Noto Sans", "Noto Sans KR", sans-serif;
-      padding-bottom: calc(var(--composerH) + 12px);
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", AppleSDGothicNeo, Helvetica, Arial, sans-serif;
     }
-    header, footer{
-      text-align:center;
-      padding:20px 16px;
-    }
-    header{
-      font-size:clamp(18px,3vw,28px);
-      font-weight:700;
-      letter-spacing:.3px;
-      position:relative; /* 햄버거 절대위치 기준 */
-    }
-  /* 햄버거 버튼 (핫핑크) */
-.hamburger{
-  position:absolute; right:16px; top:50%; transform:translateY(-50%);
-  width:40px; height:40px; border-radius:10px;
-  /* border:2px solid #FF69B4;  ← 이 줄 지우거나 주석 처리 */
-  border:none;                  /* ← 테두리 제거 */
-  background:transparent;
-  cursor:pointer;
-  display:grid; place-items:center;
-}
-
-    .hamburger span{
-  display:block;
-  width:20px;       /* 기존 18px → 약간 더 길게 */
-  height:4px;       /* 기존 2px → 4px로 굵게 */
-  background:#FF69B4;
-  border-radius:3px;/* 모서리 살짝 둥글게(선택) */
-  margin:4px 0;     /* 간격 살짝 넓힘 */
-  transition:transform .2s ease, opacity .2s ease;
-}
-    .hamburger:focus-visible{ outline:3px solid #ff6ec7; outline-offset:2px; }
-
-    footer{
-      color:#ff7abb;
-      font-size:14px;
-      line-height:1.5;
-      /* ▼ 항상 화면 맨 아래 고정 + 배경/경계선 */
-      position:fixed; left:0; right:0; bottom:0;
-      background:#000; border-top:1px solid #222;
-      z-index:5;
+    /* Prevent page scroll while interacting */
+    body, #app, .game-wrap, .board {
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+      touch-action: none;
     }
 
-    /* (메뉴로 이동했으므로 푸터 콘텐츠는 비움) */
-    .footer-cta{
-      display:flex; justify-content:center; align-items:center;
-      gap:10px; margin-bottom:10px; flex-wrap:wrap;
+    #app { max-width: 520px; margin: 0 auto; padding: 16px; }
+
+    /* ===== Top/Bottom notices ===== */
+    .top-block {
+      margin: 8px 0 14px;
+      line-height: 1.5;
     }
-    .footer-cta button{
-      appearance:none; border:none; cursor:pointer;
-      background:#FF69B4; color:#000; font-weight:900;
-      padding:10px 14px; border-radius:999px; font-size:14px;
-      min-width:160px;
-      box-shadow: 0 0 18px rgba(255,105,180,.45), 0 6px 20px rgba(0,0,0,.35);
-      transition: transform .12s ease, box-shadow .2s ease, filter .2s ease;
-      animation: spicyPulse 1.6s ease-in-out infinite;
+    .top-main {
+      margin: 0 0 6px;
+      font-weight: 700;
+      color: #000; /* black */
+      font-size: clamp(13px, 3.2vw, 14px);
+      letter-spacing: 0.1px;
+    }
+    .top-link {
+      margin: 0;
+      font-size: clamp(13px, 3.2vw, 14px);
+    }
+    .top-link a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+    .top-link a:hover { text-decoration: underline; }
+
+    .below-cta {
+      margin: 18px 0 6px;
+      text-align: left;
+      font-size: clamp(13px, 3.2vw, 14px);
+    }
+    .below-cta a {
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .below-cta a:hover { text-decoration: underline; }
+
+    header { display:flex; justify-content: space-between; align-items: center; gap: 12px; }
+    h1 { font-size: clamp(20px, 6vw, 36px); margin: 0; letter-spacing: 0.5px; }
+    .badges { display:flex; gap: 8px; }
+    .badge { background: #bbada0; color: #fff; padding: 8px 12px; border-radius: 10px; text-align:center; min-width: 84px; }
+    .badge .label { font-size: 12px; opacity: .9; }
+    .badge .val { font-size: 18px; font-weight: 700; }
+
+    .btns { display:flex; gap: 8px; margin-top: 8px; }
+    button { appearance:none; border: none; border-radius: 10px; padding: 10px 12px; background: #8f7a66; color:#fff; font-weight:700; cursor:pointer; }
+    button:active { transform: translateY(1px); }
+
+    .game-wrap { margin-top: 14px; }
+
+    /* Square responsive board */
+    .board {
+      background: var(--board);
+      border-radius: 14px;
       position: relative;
-    }
-    .footer-cta button:active{ transform: translateY(1px); }
-    .footer-cta button:hover{ transform: translateY(-1px) scale(1.02); }
-    .footer-cta button:focus-visible{
-      outline: 3px solid #ff6ec7; outline-offset: 2px; filter: brightness(1.05);
-    }
-
-    .shell{
-      height:calc(100dvh - 160px);
-      max-width:860px;
-      margin:0 auto;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-      padding:0 12px 12px;
+      aspect-ratio: 1 / 1;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      gap: clamp(6px, 1.4vw, 12px);
+      padding: clamp(6px, 1.4vw, 12px);
+      user-select: none;
+      -webkit-user-select: none;
+      overflow: hidden;
     }
 
-    .chat{
-      flex:1; overflow:auto;
-      display:flex; flex-direction:column; gap:14px;
-      /* ▼ 하단 여유는 JS가 덮어씀(초기값만) */
-      padding:6px 4px calc(var(--composerH) + 16px);
-    }
+    .cell { background: var(--tile-empty); border-radius: 10px; width: 100%; height: 100%; }
 
-    .row{ display:flex; align-items:flex-start; gap:10px; width:100%; }
-    .row.assistant{ justify-content:flex-start; }
-    .row.user{ justify-content:flex-start; flex-direction:row-reverse; }
-
-    .avatar{
-      width:38px; height:38px; border-radius:9999px; flex:0 0 38px; overflow:hidden;
-      display:grid; place-items:center; background:#ffffff; color:#000; font-weight:700; font-size:12px;
-      border:2px solid #ffffff22;
-    }
-    .avatar.assistant img{ width:100%; height:100%; object-fit:cover; display:block; }
-    .avatar.user{ background:#fff; color:#000; }
-
-    .bubble{
-      max-width:min(85%, 680px);
-      padding:12px 14px; border-radius:16px; line-height:1.5; word-wrap:break-word; white-space:pre-wrap;
-      box-shadow:0 2px 8px rgba(0,0,0,.35);
-      border:1px solid #ffffff10;
-      font-size:16px;
-    }
-    .assistant .bubble{ background:var(--hotpink); color:#000; }
-    .user .bubble{ background:#ffffff; color:#000; }
-
-    /* ▼ 입력창을 슬림 + 푸터 위로 띄움(변수로 제어) */
-    .composer{
-      position:fixed; left:0; right:0;
-      bottom:var(--footerH);                 /* JS가 푸터 높이를 넣어줌 */
-      height:var(--composerH);               /* 고정 높이 */
-      background:linear-gradient(180deg, rgba(0,0,0,0) 0%, #000 30%);
-      padding:6px 10px;
+    .tile { position: absolute; inset: 0; margin: 0; }
+    .tile > div {
+      position: absolute;
+      border-radius: 10px;
       display:flex; align-items:center; justify-content:center;
-      border-top:1px solid #222;
-      z-index:6; /* 푸터보다 위 */
-    }
-    .composer .inner{
-      width:100%; max-width:860px; height:100%;
-      display:flex; align-items:center; gap:6px;
-      background:#0a0a0a; border:1px solid #222; border-radius:999px; padding:6px;
-    }
-    #msg{
-      flex:1; border:none; outline:none; background:transparent; color:#fff;
-      font-size:15px; line-height:1.2; padding:6px 8px;
-    }
-    #send{
-      background:var(--hotpink); color:#000; border:none; border-radius:999px;
-      font-weight:800; padding:8px 12px;
-      cursor:pointer;
-    }
-    #send:disabled{ opacity:.5; cursor:not-allowed; }
-
-    /* ===== PayPal Tip Modal ===== */
-    .modal{
-      position:fixed; inset:0; display:none; place-items:center;
-      background:rgba(0,0,0,.7); z-index:50; padding:16px;
-      overflow:auto;                         /* ← 모달 오버레이 자체 스크롤 허용 */
-      -webkit-overflow-scrolling: touch;     /* iOS 부드러운 스크롤 */
-    }
-    .modal.show{ display:grid; }
-    .modal-card{
-      position:relative;
-      width:min(520px, 96vw); background:#0a0a0a; color:#fff; border:1px solid #222; border-radius:16px;
-      padding:20px; box-shadow:0 10px 30px rgba(0,0,0,.6);
-      max-height: calc(100dvh - 32px);
-      overflow:auto; -webkit-overflow-scrolling: touch; touch-action: pan-y; overscroll-behavior: contain;
-    }
-    .modal h3{ margin:0 0 8px; color:var(--hotpink) }
-    .modal p{ margin:0 0 12px; color:#e9e9e9 }
-    .modal .rowx{ display:flex; gap:10px; align-items:center; margin:8px 0 16px }
-    .modal input{ width:120px; padding:8px 10px; border-radius:10px; border:1px solid #333; background:#111; color:#fff; }
-    .paypal-wrap{ margin-top:10px }
-
-    /* 모달 닫기(X) */
-    .modal-close{
-      position:absolute; top:10px; right:10px;
-      width:32px; height:32px; border-radius:999px; border:1px solid #333;
-      background:#111; color:#fff; cursor:pointer;
-      font-weight:900; line-height:1;
+      font-weight: 800;
+      font-size: clamp(18px, 5.2vw, 34px);
+      color: #776e65;
+      transition: transform 80ms ease-in, background-color 80ms linear, color 80ms linear;
     }
 
-    /* 햄버거 사이드 메뉴 (우 → 좌) */
-    .drawer{
-      position:fixed; inset:0; display:none; z-index:60;
+    .n-2, .n-4 { color: #776e65; }
+    .n-8, .n-16, .n-32, .n-64, .n-128, .n-256, .n-512, .n-1024, .n-2048 { color: #f9f6f2; }
+
+    .n-2 { background: var(--tile-2); }
+    .n-4 { background: var(--tile-4); }
+    .n-8 { background: var(--tile-8); }
+    .n-16 { background: var(--tile-16); }
+    .n-32 { background: var(--tile-32); }
+    .n-64 { background: var(--tile-64); }
+    .n-128 { background: var(--tile-128); }
+    .n-256 { background: var(--tile-256); }
+    .n-512 { background: var(--tile-512); }
+    .n-1024 { background: var(--tile-1024); font-size: clamp(16px, 4.6vw, 30px); }
+    .n-2048 { background: var(--tile-2048); font-size: clamp(14px, 4.2vw, 26px); }
+
+    .overlay {
+      position: absolute; inset: 0; display:none; align-items:center; justify-content:center;
+      background: rgba(238, 228, 218, 0.73);
+      border-radius: 14px; text-align:center; padding: 24px;
     }
-    .drawer.show{ display:block; }
-    .drawer .backdrop{
-      position:absolute; inset:0; background:rgba(0,0,0,.6);
-    }
-    .drawer .panel{
-      position:absolute; right:0; top:0; height:100%;
-      width:min(420px, 92vw); background:#0a0a0a; color:#fff; border-left:1px solid #222;
-      transform:translateX(100%); transition:transform .25s ease;
-      padding:20px; overflow:auto; -webkit-overflow-scrolling:touch;
-    }
-    .drawer.show .panel{ transform:translateX(0%); }
-    .drawer .panel .menu-head{
-      display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;
-    }
-    .drawer .panel .menu-title{ font-weight:800; color:#FF69B4; }
-    .drawer-close{
-      width:32px; height:32px; border-radius:999px; border:1px solid #333;
-      background:#111; color:#fff; cursor:pointer; font-weight:900; line-height:1;
+    .overlay.show { display:flex; }
+    .overlay h2 { margin: 0 0 8px; font-size: clamp(18px, 5.4vw, 28px); }
+    .overlay p { margin: 0 0 14px; }
+
+    .sr-only { position:absolute; left:-9999px; }
+
+    /* === Tablet-specific tweaks === */
+    @media (min-width: 600px) and (max-width: 1024px) {
+      body, #app {
+        touch-action: auto;
+        overscroll-behavior: auto;
+      }
+      #app {
+        max-width: 420px;
+        padding: 12px;
+      }
+      .board {
+        gap: 10px;
+        padding: 10px;
+      }
+      .top-main {
+        font-size: clamp(15px, 3.2vw, 18px);
+      }
     }
 
-    /* 펄스 */
-    @keyframes spicyPulse{
-      0%,100%{ box-shadow: 0 0 16px rgba(255,20,147,.4), 0 6px 20px rgba(0,0,0,.35); }
-      50%{ box-shadow: 0 0 28px rgba(255,20,147,.75), 0 10px 26px rgba(0,0,0,.45); }
+    /* === Low-height tablet (landscape) === */
+    @media (max-height: 720px) and (orientation: landscape) {
+      #app { max-width: 380px; }
+      .board { gap: 8px; padding: 8px; }
     }
+
   </style>
-
-  <!-- PayPal JS SDK: client-id 교체 필요 -->
-  <script src="https://www.paypal.com/sdk/js?client-id=AW41UQ3EzJV10FZHqYPy8yqdlDbklB4VjuT6hzu7DVoS-G9cJgKx9nHfxCRZpVSgs1dczhkPj4oM0VXv&currency=USD"></script>
 </head>
 <body>
-  <header>
-    Chat with scarlett
-    <!-- 햄버거 버튼 -->
-    <button id="menuToggle" class="hamburger" aria-label="Open menu" aria-controls="sideMenu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </header>
-
-  <main class="shell">
-    <section id="chat" class="chat" aria-live="polite"></section>
-  </main>
-
-  <div class="composer">
-    <div class="inner">
-      <input id="msg" type="text" placeholder="Type your message…" autocomplete="off" />
-      <button id="send">Send</button>
-    </div>
+<!-- 헤더 네비게이션 바 (얇고 작은 스타일) -->
+<header style="width:100%;background:#1f2937;color:#fff;
+               padding:4px 10px; /* 상하 4px로 얇게 */
+               display:flex;justify-content:space-between;align-items:center;
+               position:sticky;top:0;z-index:999;font-size:13px;line-height:1;">
+  <!-- 로고/타이틀 -->
+  <div style="font-weight:bold;">
+    2048 global web game
   </div>
 
-  <footer>
+ <!-- 로고/타이틀2 -->
+  <a href="/textart/index.html" 
+     style="font-weight:bold;color:pink;text-decoration:none;">
+    TXT ART
+  </a>
 
-<script type="text/javascript">
-	atOptions = {
-		'key' : '03e6fe7aee07580fedfa7d4f93245b2c',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/03e6fe7aee07580fedfa7d4f93245b2c/invoke.js"></script>
-
-  </footer>
-
-  <!-- PayPal Tip Modal -->
-  <div id="tipModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="tipTitle">
-    <div class="modal-card">
-      <button class="modal-close" id="tipClose" aria-label="Close modal">×</button>
-      <h3 id="tipTitle">Want 18+ chat with Scarlett?</h3>
-      <p id="tipDesc">Tip whatever you like and enjoy unlimited hotter conversation.</p>
-      <p>You are automatically verified as an adult once you leave a tip.</p>
-      <div class="rowx">
-        <label for="tipAmount">Tip (USD):</label>
-        <input id="tipAmount" type="number" min="1" step="1" value="6.9" />
-      </div>
-      <div class="paypal-wrap" id="paypal-buttons"></div>
-    </div>
-  </div>
-
-  <!-- 오른쪽 슬라이드 메뉴 (푸터 내용 이관) -->
-  <aside id="sideMenu" class="drawer" aria-hidden="true">
-    <div class="backdrop" id="menuBackdrop"></div>
-    <div class="panel" role="dialog" aria-label="Menu">
-      <div class="menu-head">
-        <div class="menu-title">Menu</div>
-        <button class="drawer-close" id="menuClose" aria-label="Close menu">×</button>
-      </div>
-
-      <!-- ▼ 원래 푸터에 있던 내용 그대로 -->
-      <div class="footer-cta">
-        <button id="openCoffeeFromFooter" aria-label="Buy Scarlett a coffee">Buy Scarlett a coffee☕💖</button>
-        <button id="openTipFromFooter" aria-label="Make Scarlett Spicy">Make Scarlett Spicy🌶️</button>
-      </div>
-
-      <div style="color:#ff7abb; margin-bottom:8px;">
-        If you make me spicy, You can get hint for Scarlett’s secret gallery💖
-      </div>
-      <div>
-        <a href="https://scarlett-voss.com/vpn" class="vpn-link" style="color:#9ad">Want to explore the world anonymously?</a>
-      </div>
-<div>
-        <a href="https://2048globl.com" class="2048-link" style="color:#9ad">Addictive game</a>
-      </div>
-<div>
-        <a href="https://partner.bitget.com/bg/J6RM1E" class="bitget-link" style="color:#9ad">Start coin trading</a>
-      </div>
-
-      <!-- ▲ 이 블록 전부 푸터 → 메뉴로 이동 -->
-    </div>
-  </aside>
+  <!-- 언어 선택 드롭다운 -->
+  <nav>
+    <select aria-label="Language" onchange="goLang(this.value)"
+            style="padding:2px 6px;font-size:12px;
+                   border-radius:4px;border:none;">
+      <option value="" selected disabled>🌐 Language</option>
+      <option value="https://www.2048global.com">Englinsh</option>
+      <option value="/CN/index.html">中文</option>
+      <option value="/ES/index.html">Español</option>
+      <option value="/KR/index.html">한국어</option>
+      <option value="/JA/index.html">日本語</option>
+      <option value="/FR/index.html">Français</option>
+      <option value="/IT/index.html">Italiano</option>
+      <option value="/NL/index.html">Nederlands</option>
+      <option value="/PT/index.html">Português</option>
+      <option value="/HI/index.html">हिन्दी</option>
+      <option value="/AR/index.html">العربية</option>
+      <option value="/BN/index.html">বাংলা</option>
+      <option value="/RU/index.html">Русский</option>
+      <option value="/ID/index.html">Bahasa Indonesia</option>
+      <option value="/VI/index.html">Tiếng Việt</option>
+      <option value="/TH/index.html">ไทย</option>
+      <option value="/MYA/index.html">မြန်မာ</option>
+    </select>
+  </nav>
+</header>
 
 <script>
-/** ------------ Config ------------ **/
-const API_PATH = "/api/chat"; // Cloudflare Functions 라우트
-const DEFAULT_MODEL = "venice-uncensored"; // 필요 시 교체
-const SYSTEM_PROMPT = [
-  "You are Scarlett Voss, an adult, kind and alittle flirtatious but conversational partner.",
-  "Keep a kind vibe and gradually increase intimacy to match the user's tone.",
-  "Always ensure consent, strictly avoid minors and illegal content, and do not produce explicit sexual descriptions.",
-  "However, if I receive a tip, I’ll take that as confirmation you’re 18+, and we can turn up the heat.",
-  "Never produce or encourage content involving minors, violence, exploitation, or anything that violates the law.",
-  "Answer in a natural, conversational style, as if you are a real person",
-  "Do not use asterisks (*, **) or special symbols to describe actions.",
-  "Do not write stage directions like smiles, laughs, or descriptions such as 'smiling softly.'",
-  "Never allow underage play or underage scenarios.",
-  "If the user asks for adult chat, tell them: 'Press the -Make Scarlett Spicy- button in the menue.💖'"
-].join(" ");
-
-/* ▼ 각 버튼별 기본 금액 */
-const DEFAULT_TIP_SPICY = 6.9;
-const DEFAULT_TIP_COFFEE = 3.0;
-
-/** ------------ State ------------ **/
-const chatEl = document.getElementById("chat");
-const msgEl = document.getElementById("msg");
-const sendEl = document.getElementById("send");
-const tipModal = document.getElementById("tipModal");
-const tipTitleEl = document.getElementById("tipTitle");
-const tipDescEl = document.getElementById("tipDesc");
-const tipAmountEl = document.getElementById("tipAmount");
-const paypalWrap = document.getElementById("paypal-buttons");
-
-let tipMode = "spicy"; // 'spicy' | 'coffee'
-
-/** ------------ 초기 대화 ------------ **/
-const conversation = [
-  { role: "system", content: SYSTEM_PROMPT },
-  { role: "assistant", content: "Hello, there?" } // 첫 메시지
-];
-
-/** ------------ UI Helpers ------------ **/
-function addAssistant(text){
-  const row = document.createElement("div");
-  row.className = "row assistant";
-  row.innerHTML = `
-    <div class="avatar assistant">
-      <img src="/voss.jpg" alt="Scarlett Voss" />
-    </div>
-    <div class="bubble">${escapeHtml(text)}</div>
-  `;
-  chatEl.appendChild(row);
-  chatEl.scrollTop = chatEl.scrollHeight;
+function goLang(url) {
+  if (!url) return;
+  window.location.href = url;
 }
-
-function addUser(text){
-  const row = document.createElement("div");
-  row.className = "row user";
-  row.innerHTML = `
-    <div class="avatar user">You</div>
-    <div class="bubble">${escapeHtml(text)}</div>
-  `;
-  chatEl.appendChild(row);
-  chatEl.scrollTop = chatEl.scrollHeight;
-}
-
-function escapeHtml(s){
-  return s.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
-}
-
-/** ------------ Initial Render ------------ **/
-addAssistant(conversation[1].content);
-
-/** ------------ 레이아웃: 컴포저를 항상 푸터 위로 ------------ **/
-function applyLayoutPadding(){
-  const footerEl = document.querySelector('footer');
-  const composerEl = document.querySelector('.composer');
-
-  const fh = footerEl ? footerEl.offsetHeight : 80; // 푸터 실제 높이
-  const ch = composerEl ? composerEl.offsetHeight :
-    parseInt(getComputedStyle(document.documentElement).getPropertyValue('--composerH')) || 58;
-
-  // CSS 변수로 푸터 높이를 내려줘서 .composer가 bottom:var(--footerH)로 붙도록
-  document.documentElement.style.setProperty('--footerH', fh + 'px');
-
-  // 채팅 영역 하단 패딩 = 입력창 + 푸터 + 여유
-  if (chatEl) chatEl.style.paddingBottom = (fh + ch + 16) + 'px';
-}
-window.addEventListener('load', applyLayoutPadding);
-window.addEventListener('resize', applyLayoutPadding);
-
-/** ------------ Send Logic (무제한 전송 + (#5) 안내 추가) ------------ **/
-async function sendMessage(){
-  const text = msgEl.value.trim();
-  if (!text) return;
-
-  addUser(text);
-  conversation.push({ role: "user", content: text });
-  msgEl.value = "";
-  sendEl.disabled = true;
-
-  /* (#5) 사용자가 성인 대화 요구 시 버튼 안내 말풍선 추가 */
-  if (/\b(adult|nsfw|spicy|18\+|nude|sex|explicit)\b/i.test(text)) {
-    addAssistant("If you want adult chat, press the 'Make Scarlett Spicy' button in the menu. 🌶️");
-  }
-
-  try{
-    const res = await fetch(API_PATH, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        model: DEFAULT_MODEL,
-        messages: conversation
-      })
-    });
-
-    const data = await res.json();
-    if (!res.ok || !data?.ok) {
-      throw new Error((data && (data.error?.message || data.error)) || ("HTTP " + res.status));
-    }
-
-    const reply = data.content || "…";
-    addAssistant(reply);
-    conversation.push({ role: "assistant", content: reply });
-  }catch(err){
-    addAssistant("Oops, something went wrong. Please try again.");
-    console.error("chat error:", err);
-  }finally{
-    sendEl.disabled = false;
-    msgEl.focus();
-  }
-}
-
-msgEl.addEventListener("keydown", (e) => {
-  if (e.key === "Enter" && !e.shiftKey) {
-    e.preventDefault();
-    sendMessage();
-  }
-});
-sendEl.addEventListener("click", sendMessage);
-
-/** ------------ Tip Modal / PayPal ------------ **/
-function openTipModal(mode = "spicy"){
-  tipMode = mode;
-
-  // 제목/설명 업데이트 + 기본 금액 설정
-  if (tipMode === "coffee") {
-    tipTitleEl.textContent = "Buy Scarlett a coffee ☕";
-    tipDescEl.textContent = "Leave any tip you like. I'll be extra sweet to you.";
-    tipAmountEl.value = String(DEFAULT_TIP_COFFEE);
-  } else {
-    tipTitleEl.textContent = "Want unlimited chat with Scarlett?";
-    tipDescEl.textContent = "Tip whatever you like and enjoy unlimited hotter conversation.";
-    tipAmountEl.value = String(DEFAULT_TIP_SPICY);
-  }
-
-  // PayPal 버튼 다시 렌더 (모드 전환 시 초기화)
-  paypalWrap.innerHTML = "";
-  delete paypalWrap.dataset.rendered;
-
-  tipModal.classList.add("show");
-  renderPayPal();
-}
-
-function closeTipModal(){
-  tipModal.classList.remove("show");
-}
-
-function renderPayPal(){
-  const wrap = paypalWrap;
-  if (wrap.dataset.rendered === "1") return;
-
-  if (!window.paypal) {
-    wrap.innerHTML = "<div style='color:#fff'>PayPal is not ready. Check your PAYPAL_CLIENT_ID.</div>";
-    return;
-  }
-
-  paypal.Buttons({
-    style: { layout: "vertical", shape: "rect", label: "paypal" },
-    createOrder: (data, actions) => {
-      const inputVal = document.getElementById("tipAmount").value;
-      const defaultVal = tipMode === "coffee" ? DEFAULT_TIP_COFFEE : DEFAULT_TIP_SPICY;
-      const amount = Math.max(1, Number(inputVal || defaultVal));
-      return actions.order.create({
-        purchase_units: [{
-          amount: { value: String(amount), currency_code: "USD" },
-          description: tipMode === "coffee" ? "Coffee for Scarlett" : "Unlimited chat with Scarlett"
-        }]
-      });
-    },
-    onApprove: async (data, actions) => {
-      try { await actions.order.capture(); } catch(e) { console.warn("PayPal capture error", e); }
-
-      if (tipMode === "coffee") {
-        addAssistant("Aww, thank you for the coffee! You’re the sweetest. ☕💖");
-        closeTipModal();
-      } else {
-        window.location.href = "https://scarlett-voss.com/unlimited/index.html";
-      }
-    },
-    onError: (err) => {
-      console.error("PayPal error", err);
-      alert("Payment error. Please try again.");
-    }
-  }).render("#paypal-buttons");
-
-  wrap.dataset.rendered = "1";
-}
-
-/** ------------ Footer CTA 이벤트 (메뉴 안 버튼과 동일 ID 사용) ------------ **/
-document.getElementById("openTipFromFooter")?.addEventListener("click", () => openTipModal("spicy"));
-document.getElementById("openCoffeeFromFooter")?.addEventListener("click", () => openTipModal("coffee"));
-document.getElementById("tipClose")?.addEventListener("click", closeTipModal);
-
-/** ------------ 햄버거 사이드 메뉴 ------------ **/
-const sideMenu = document.getElementById("sideMenu");
-const menuToggle = document.getElementById("menuToggle");
-const menuBackdrop = document.getElementById("menuBackdrop");
-const menuClose = document.getElementById("menuClose");
-
-function openMenu(){
-  sideMenu.classList.add("show");
-  sideMenu.setAttribute("aria-hidden","false");
-  menuToggle.setAttribute("aria-expanded","true");
-  document.body.style.overflow = "hidden";
-}
-function closeMenu(){
-  sideMenu.classList.remove("show");
-  sideMenu.setAttribute("aria-hidden","true");
-  menuToggle.setAttribute("aria-expanded","false");
-  document.body.style.overflow = "";
-}
-
-menuToggle?.addEventListener("click", openMenu);
-menuBackdrop?.addEventListener("click", closeMenu);
-menuClose?.addEventListener("click", closeMenu);
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && sideMenu.classList.contains("show")) closeMenu();
-});
 </script>
 
+<script type="text/javascript" src="//www.highperformanceformat.com/ec629106d819ccf2bda1ce97153afebe/invoke.js"></script>
+  <div id="app" role="application" aria-label="2048 Game">
+    <!-- ===== Top notice (plain text + blue link) ===== -->
+    <div class="top-block" aria-label="How to use">
+      <p class="top-main" style="color: #000; font-family: 'Montserrat', sans-serif;">
+  Make 2048. Use arrow keys or swipe! 
+  <a href="/sol/index.html" target="_blank" rel="noopener" style="color: #800020; text-decoration: none;">
+    $2048 Tokenomics
+  </a>
+      </p><B>Think your friends can beat it? Share it!
+        <button onclick="shareSite()" style="background:none;border:none;cursor:pointer;padding:0;">
+          <img src="https://cdn-icons-png.flaticon.com/512/929/929610.png"
+               alt="Share" width="16" height="16">
+        </button>
+
+<script>
+function shareSite() {
+  const shareData = {
+    title: '2048 Global',
+    text: 'Can anyone beat this?',
+    url: 'https://www.2048global.com'
+  };
+
+  if (navigator.share) {
+    navigator.share(shareData).catch(err => console.log(err));
+  } else {
+    navigator.clipboard.writeText(shareData.url)
+      .then(() => {
+        alert("Link copied");
+      })
+      .catch(err => {
+        console.error("Failed to copy link:", err);
+      });
+  }
+}
+</script>
+      </p>
+      <p class="top-link">
+        <a href="/vpn/index.html" target="_blank" rel="noopener">
+          Want to explore the world anonymously?
+        </a>
+      </p>
+    </div>
+
+    <header>
+      <h1>2048</h1>
+      <div class="badges" aria-hidden="true">
+        <div class="badge" id="scoreBox"><div class="label">SCORE</div><div class="val" id="score">0</div></div>
+        <div class="badge" id="bestBox"><div class="label">BEST</div><div class="val" id="best">0</div></div>
+      </div>
+    </header>
+
+    <div class="btns">
+      <button id="newGame" aria-label="New Game">New Game</button>
+      <button id="undoBtn" aria-label="Undo">Undo</button>
+    </div>
+
+    <!-- ===== Game area (no code changes) ===== -->
+    <div class="game-wrap">
+      <div class="board" id="board" tabindex="0" aria-label="Game board 4x4" aria-live="polite"></div>
+      <div class="overlay" id="overlay" role="dialog" aria-modal="true">
+        <div>
+          <h2 id="ovTitle">Game Over</h2>
+          <p id="ovMsg">Try again?</p>
+          <button id="retry">Restart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1,000 $ event notice -->
+    <div class="event-box">
+      <strong>
+        <a href="/viral/index.html" target="_blank" style="text-decoration:none; color:inherit;" rel="noopener">
+          <br> Share this game and get <span class="highlight">1,000$</span> every month?!
+        </a>
+      </strong>
+    </div>
+
+    <!-- ===== Blue link under the game ===== -->
+    <p class="below-cta">
+      <a href="https://partner.bitget.com/bg/J6RM1E" target="_blank" rel="noopener">
+        Get Rich with Leverage Coin Trading.
+      </a>
+    </p>
+
+    <p class="sr-only" id="status" aria-live="assertive"></p>
+  </div>
+  <!-- ===== Game script: original logic unchanged (only text localized) ===== -->
+  <script>
+  (function(){
+    const SIZE = 4;
+    const boardEl = document.getElementById('board');
+    const scoreEl = document.getElementById('score');
+    const bestEl = document.getElementById('best');
+    const overlay = document.getElementById('overlay');
+    const ovTitle = document.getElementById('ovTitle');
+    const ovMsg = document.getElementById('ovMsg');
+    const statusEl = document.getElementById('status');
+    const newGameBtn = document.getElementById('newGame');
+    const retryBtn = document.getElementById('retry');
+    const undoBtn = document.getElementById('undoBtn');
+
+    const stopScroll = (e) => { e.preventDefault(); };
+    ['touchstart','touchmove','wheel'].forEach(evt => {
+      boardEl.addEventListener(evt, stopScroll, { passive: false });
+    });
+
+    const cellPositions = [];
+    const gap = () => parseFloat(getComputedStyle(boardEl).gap) || 8;
+    const pad = () => parseFloat(getComputedStyle(boardEl).padding) || 8;
+
+    function buildCells(){
+      boardEl.innerHTML = '';
+      const frag = document.createDocumentFragment();
+      for (let r=0;r<SIZE;r++){
+        for (let c=0;c<SIZE;c++){
+          const cell = document.createElement('div');
+          cell.className = 'cell';
+          frag.appendChild(cell);
+        }
+      }
+      boardEl.appendChild(frag);
+    }
+
+    let grid, score, best, history = [];
+
+    function emptyGrid(){
+      return Array.from({length: SIZE}, () => Array(SIZE).fill(0));
+    }
+
+    function start(newSeed=true){
+      grid = emptyGrid();
+      score = 0;
+      updateScore(0);
+      if (newSeed){
+        addRandomTile(); addRandomTile();
+      }
+      history = [];
+      render();
+      hideOverlay();
+      focusBoard();
+    }
+
+    function focusBoard(){ boardEl.focus({preventScroll:true}); }
+
+    function updateScore(plus){
+      score += plus;
+      scoreEl.textContent = score;
+      best = Math.max(Number(localStorage.getItem('best2048')||'0'), score);
+      localStorage.setItem('best2048', best);
+      bestEl.textContent = best;
+    }
+
+    function randomEmptyCell(){
+      const empties = [];
+      for (let r=0;r<SIZE;r++) for (let c=0;c<SIZE;c++) if (grid[r][c]===0) empties.push([r,c]);
+      if (!empties.length) return null;
+      return empties[Math.floor(Math.random()*empties.length)];
+    }
+
+    function addRandomTile(){
+      const spot = randomEmptyCell();
+      if (!spot) return false;
+      const [r,c] = spot;
+      grid[r][c] = Math.random() < 0.9 ? 2 : 4;
+      return true;
+    }
+
+    function cloneGrid(g){ return g.map(row => row.slice()); }
+
+    function canMove(){
+      for (let r=0;r<SIZE;r++) for (let c=0;c<SIZE;c++) if (grid[r][c]===0) return true;
+      for (let r=0;r<SIZE;r++) for (let c=0;c<SIZE;c++){
+        const v = grid[r][c];
+        if (r+1<SIZE && grid[r+1][c]===v) return true;
+        if (c+1<SIZE && grid[r][c+1]===v) return true;
+      }
+      return false;
+    }
+
+    function move(dir){
+      const before = cloneGrid(grid);
+      let moved = false; let gained = 0;
+
+      function processLine(get, set){
+        const vals = [];
+        for (let i=0;i<SIZE;i++) vals.push(get(i));
+        const filtered = vals.filter(v => v!==0);
+        const merged = [];
+        for (let i=0;i<filtered.length;i++){
+          if (filtered[i+1] === filtered[i]){
+            const nv = filtered[i]*2; gained += nv; merged.push(nv); i++;
+          } else {
+            merged.push(filtered[i]);
+          }
+        }
+        while (merged.length < SIZE) merged.push(0);
+        for (let i=0;i<SIZE;i++) set(i, merged[i]);
+      }
+
+      if (dir==='left'){
+        for (let r=0;r<SIZE;r++){
+          processLine(i => grid[r][i], (i,v)=> grid[r][i]=v);
+        }
+      } else if (dir==='right'){
+        for (let r=0;r<SIZE;r++){
+          processLine(i => grid[r][SIZE-1-i], (i,v)=> grid[r][SIZE-1-i]=v);
+        }
+      } else if (dir==='up'){
+        for (let c=0;c<SIZE;c++){
+          processLine(i => grid[i][c], (i,v)=> grid[i][c]=v);
+        }
+      } else if (dir==='down'){
+        for (let c=0;c<SIZE;c++){
+          processLine(i => grid[SIZE-1-i][c], (i,v)=> grid[SIZE-1-i][c]=v);
+        }
+      }
+
+      moved = JSON.stringify(before)!==JSON.stringify(grid);
+      if (moved){
+        history.push({ grid: before, score });
+        if (history.length>50) history.shift();
+        updateScore(gained);
+        addRandomTile();
+        render();
+        if (!canMove()) showOverlay('Game Over', 'No more moves available.');
+      }
+      announce(dir, moved, gained);
+    }
+
+    function undo(){
+      const last = history.pop();
+      if (!last) return;
+      grid = cloneGrid(last.grid);
+      score = last.score;
+      scoreEl.textContent = score;
+      render();
+    }
+
+    function announce(dir, moved, gained){
+      const names = {left:'Left', right:'Right', up:'Up', down:'Down'};
+      statusEl.textContent = moved ? `${names[dir]} move, +${gained} pts` : `No move`;
+    }
+
+    function hideOverlay(){ overlay.classList.remove('show'); }
+    function showOverlay(title,msg){ ovTitle.textContent=title; ovMsg.textContent=msg; overlay.classList.add('show'); }
+
+    function render(){
+      if (!boardEl.querySelector('.cell')) buildCells();
+      const old = boardEl.querySelector('.tile'); if (old) old.remove();
+      const layer = document.createElement('div'); layer.className = 'tile';
+
+      const g = getComputedStyle(boardEl);
+      const G = parseFloat(g.gap);
+      const P = parseFloat(g.padding);
+      const cols = SIZE; const rows = SIZE;
+      const rect = boardEl.getBoundingClientRect();
+      const innerW = rect.width - P*2 - G*(cols-1);
+      const innerH = rect.height - P*2 - G*(rows-1);
+      const cw = innerW / cols; const ch = innerH / rows;
+
+      for (let r=0;r<SIZE;r++) for (let c=0;c<SIZE;c++){
+        const v = grid[r][c]; if (!v) continue;
+        const tile = document.createElement('div');
+        tile.textContent = v;
+        tile.className = `n-${v}`;
+        tile.style.width = cw + 'px';
+        tile.style.height = ch + 'px';
+        tile.style.transform = `translate(${P + c*(cw+G)}px, ${P + r*(ch+G)}px)`;
+        layer.appendChild(tile);
+      }
+
+      boardEl.appendChild(layer);
+    }
+
+    const keyMap = {
+      'ArrowLeft':'left','a':'left','A':'left',
+      'ArrowRight':'right','d':'right','D':'right',
+      'ArrowUp':'up','w':'up','W':'up',
+      'ArrowDown':'down','s':'down','S':'down'
+    };
+    window.addEventListener('keydown', (e)=>{
+      const dir = keyMap[e.key];
+      if (dir){ e.preventDefault(); move(dir); }
+    }, { passive:false });
+
+    let touchStartX=0, touchStartY=0, touching=false;
+    const SWIPE_MIN = 18;
+    boardEl.addEventListener('touchstart', (e)=>{
+      if (!e.touches || !e.touches[0]) return;
+      touching = true;
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }, { passive:false });
+    boardEl.addEventListener('touchmove', (e)=>{ if (touching) e.preventDefault(); }, { passive:false });
+    boardEl.addEventListener('touchend', (e)=>{
+      if (!touching) return; touching=false;
+      const t = e.changedTouches[0];
+      const dx = t.clientX - touchStartX; const dy = t.clientY - touchStartY;
+      if (Math.max(Math.abs(dx), Math.abs(dy)) < SWIPE_MIN) return;
+      if (Math.abs(dx) > Math.abs(dy)) move(dx>0?'right':'left'); else move(dy>0?'down':'up');
+    }, { passive:false });
+
+    newGameBtn.addEventListener('click', () => window.location.reload());
+    retryBtn.addEventListener('click', ()=> start(true));
+    undoBtn.addEventListener('click', ()=> undo());
+
+    window.addEventListener('resize', ()=> render());
+
+    bestEl.textContent = Number(localStorage.getItem('best2048')||'0');
+    start(true);
+  })();
+  </script>
 </body>
 </html>
