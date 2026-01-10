@@ -52,6 +52,9 @@
   <url>
     <loc>https://2048global.com/VI/</loc>
   </url>
+   <url>
+    <loc>https://2048global.com/DE/</loc>
+  </url>
   <url>
     <loc>https://2048global.com/sol/</loc>
   </url>
@@ -63,5 +66,6 @@
   </url>
 <loc>https://2048global.com/KR/</loc>
   </url>
+
 
 </urlset>
